@@ -1,0 +1,27 @@
+# Phase 2 evaluation environment (2026-09-06 JST)
+# No credentials, home paths, or local cache paths are recorded.
+python=3.11.15
+torch=2.11.0+cu128
+faster-whisper=1.2.1
+transformers=4.57.3
+soundfile=0.14.0
+numpy=2.4.6
+pyopenjtalk=0.4.1
+unidic-lite=1.0.8
+qwen-tts=0.1.1
+uv=0.8.17
+cuda_available=true
+gpu=NVIDIA GeForce RTX 5070 Ti
+gpu_driver=595.84
+gpu_memory=16303 MiB
+voicevox_image=voicevox/voicevox_engine:0.25.2
+voicevox_image_digest=sha256:eb8c7f46a7d01217d1ff2b6f018261faedeceded3cc756b4fbbf371791ad6c90
+
+# Per-engine source revisions
+qwen3_tts_source=022e286b98fbec7e1e916cb940cdf532cd9f488e
+indextts_25_source=ee40fa7d6c6b8a2c7f06105f9f1e65775b74868c
+irodori_tts_source=8224dafb46d0aba89209a8f905f1cb7e3299d9c1
+style_bert_vits2_source=66de777e06392c0f313600be03c43ef96658b244
+voicevox_engine_source=7aed82202a2fcff59d35def8899733db63c3fc7f
+kana_checkpoint_snapshot=d30d246cd24a225821d03d183de7bb2e769e18df
+kana_checkpoint_sha256=1c8d97f2c01560da21df4095cea800f0b6f12dd1269c8e2233e6db659b502e14

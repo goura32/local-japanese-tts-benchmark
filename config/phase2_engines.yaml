@@ -1,0 +1,143 @@
+engines:
+  - engine_id: qwen3_tts
+    engine_name: Qwen3-TTS
+    adapter_script: scripts/generate/adapters/qwen3_tts_phase2.py
+    official_repo: https://github.com/QwenLM/Qwen3-TTS
+    official_commit: 022e286b98fbec7e1e916cb940cdf532cd9f488e
+    model_id: Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign
+    model_snapshot: 5ecdb67327fd37bb2e042aab12ff7391903235d3
+    license:
+      code: Apache-2.0
+      model: Apache-2.0 model-card terms
+      speaker: VoiceDesign synthetic speaker; no reference audio
+      output: do not redistribute generated audio in this repository
+    reference_policy: no reference audio; VoiceDesign
+    instruction_control:
+      natural_language: true
+      official_style: false
+      speaker_style_embedding: false
+      prosody_parameter: false
+      same_speaker_multi_style: false
+    reading_control:
+      raw: model text input
+      engine_native: no separate native reading API; raw input retained
+      external_preprocessed: expected reading substitution
+
+  - engine_id: indextts_25
+    engine_name: IndexTTS-2.5
+    adapter_script: scripts/generate/adapters/indextts_25_phase2.py
+    official_repo: https://github.com/index-tts/index-tts
+    official_commit: ee40fa7d6c6b8a2c7f06105f9f1e65775b74868c
+    model_id: IndexTeam/IndexTTS-2.5
+    license:
+      code: bilibili Model Use License Agreement
+      model: bilibili Model Use License Agreement; checkpoint-specific terms apply
+      speaker: official public reference only; no user or third-party private voice
+      output: do not redistribute generated audio in this repository
+    reference_policy: official public reference audio required by upstream infer API
+    instruction_control:
+      natural_language: false
+      official_style: true
+      speaker_style_embedding: true
+      prosody_parameter: true
+      same_speaker_multi_style: true
+    reading_control:
+      raw: upstream Japanese text normalization
+      engine_native: upstream normalization
+      external_preprocessed: expected reading substitution
+
+  - engine_id: irodori_tts
+    engine_name: Irodori-TTS
+    adapter_script: scripts/generate/adapters/irodori_tts_phase2.py
+    official_repo: https://github.com/Aratako/Irodori-TTS
+    official_commit: 8224dafb46d0aba89209a8f905f1cb7e3299d9c1
+    model_id: Aratako/Irodori-TTS-500M-v2-VoiceDesign
+    model_snapshot: 456e55708e7183f5c7faa1448209d54aa8991451
+    model_file_sha256: 8b703c28e88f160dee0258b1136f8fe1ea68c063b45fc28375b5a134d6ce1131
+    codec_id: Aratako/Semantic-DACVAE-Japanese-32dim
+    license:
+      code: MIT
+      model: MIT with model-card ethical-use restrictions
+      speaker: caption-controlled synthetic speaker; no reference audio
+      output: do not redistribute generated audio in this repository
+    reference_policy: no reference audio; caption/VoiceDesign
+    instruction_control:
+      natural_language: true
+      official_style: false
+      speaker_style_embedding: false
+      prosody_parameter: false
+      same_speaker_multi_style: false
+    reading_control:
+      raw: model text input
+      engine_native: no separate native reading API; raw input retained
+      external_preprocessed: expected reading substitution
+
+  - engine_id: style_bert_vits2
+    engine_name: Style-Bert-VITS2
+    adapter_script: scripts/generate/adapters/style_bert_vits2_phase2.py
+    official_repo: https://github.com/litagin02/Style-Bert-VITS2
+    official_commit: 66de777e06392c0f313600be03c43ef96658b244
+    model_id: litagin/style_bert_vits2_jvnv
+    model_snapshot: 205830ca1d49e666ddfbf2a755f0108e9cade4dd
+    model_file_sha256: a90fa6c9444d9235c9ec4db99daf7c5c6a21cc26ca141b4c48455d66a3257d01
+    license:
+      code: AGPL-3.0; text/user_dict modules have separate LGPL-3.0 terms
+      model: AGPL-3.0 model card for selected jvnv checkpoint
+      speaker: checkpoint speaker/model-specific terms
+      output: do not redistribute generated audio in this repository
+    reference_policy: no reference audio; fixed checkpoint speaker
+    instruction_control:
+      natural_language: false
+      official_style: true
+      speaker_style_embedding: true
+      prosody_parameter: true
+      same_speaker_multi_style: true
+    reading_control:
+      raw: JP-Extra text frontend
+      engine_native: JP-Extra text frontend
+      external_preprocessed: expected reading substitution
+    style_map:
+      neutral: Neutral
+      cheerful: Happy
+      sad: Sad
+      angry: Angry
+      calm: Neutral
+      tired: Sad
+      suspenseful: Fear
+      punctuation_performance: Surprise
+      restrained_emotion: Sad
+
+  - engine_id: voicevox
+    engine_name: VOICEVOX Engine
+    adapter_script: scripts/generate/adapters/voicevox_phase2.py
+    official_repo: https://github.com/VOICEVOX/voicevox_engine
+    official_commit: 7aed82202a2fcff59d35def8899733db63c3fc7f
+    engine_version: 0.25.2
+    endpoint: http://127.0.0.1:50021
+    speaker_id: 0
+    license:
+      code: LGPL-3.0 or applicable source-code-non-disclosure license
+      model: speaker/model-specific terms
+      speaker: speaker-specific character terms and required credit
+      output: no generated audio redistributed in this repository
+    reference_policy: fixed engine speaker; no reference audio
+    instruction_control:
+      natural_language: false
+      official_style: false
+      speaker_style_embedding: false
+      prosody_parameter: true
+      same_speaker_multi_style: false
+    reading_control:
+      raw: engine text frontend
+      engine_native: engine text frontend
+      external_preprocessed: expected reading substitution
+    style_map:
+      neutral: {speaker_id: 0, parameters: {}}
+      cheerful: {speaker_id: 1, parameters: {speedScale: 1.05, intonationScale: 1.1}}
+      sad: {speaker_id: 0, parameters: {speedScale: 0.9, intonationScale: 0.85}}
+      angry: {speaker_id: 1, parameters: {intonationScale: 1.2}}
+      calm: {speaker_id: 0, parameters: {speedScale: 0.9}}
+      tired: {speaker_id: 0, parameters: {speedScale: 0.85, volumeScale: 0.9}}
+      suspenseful: {speaker_id: 0, parameters: {speedScale: 0.9, intonationScale: 1.1}}
+      punctuation_performance: {speaker_id: 0, parameters: {}}
+      restrained_emotion: {speaker_id: 0, parameters: {speedScale: 0.95, intonationScale: 0.9}}

@@ -1,0 +1,104 @@
+[
+  {
+    "engine_id": "qwen3_tts",
+    "attempts": [
+      {
+        "route": "official_pypi",
+        "command": "python -m pip install -U qwen-tts",
+        "status": "failed",
+        "exit_code": 1,
+        "reason": "dependency resolution attempted a full CUDA stack and stopped with disk quota exceeded; no repository files changed"
+      },
+      {
+        "route": "upstream_source_existing_cuda",
+        "command": "python -m pip install -e upstream/Qwen3-TTS --no-deps; install core runtime dependencies into the isolated CUDA evaluation environment",
+        "status": "passed",
+        "exit_code": 0,
+        "reason": "qwen_tts import and VoiceDesign generation probe passed with local model snapshot"
+      },
+      {
+        "route": "pinned_core_runtime",
+        "command": "python -m pip install --no-deps qwen-tts==0.1.1 transformers==4.57.3",
+        "status": "passed",
+        "exit_code": 0,
+        "reason": "import smoke test passed; UI-only optional dependencies were intentionally not installed"
+      }
+    ]
+  },
+  {
+    "engine_id": "indextts_25",
+    "attempts": [
+      {
+        "route": "official_uv_all_extras",
+        "command": "uv sync --all-extras",
+        "status": "failed",
+        "exit_code": 1,
+        "reason": "upstream dependency graph stopped while extracting nvidia-nccl-cu12 with disk quota exceeded"
+      },
+      {
+        "route": "source_existing_cuda",
+        "command": "python -m pip install -e upstream/index-tts --no-deps; install minimal runtime packages",
+        "status": "failed",
+        "exit_code": 1,
+        "reason": "upstream HEAD imports OffloadedCache and QuantizedCacheConfig that are absent from the available Transformers 5.16.1 runtime"
+      },
+      {
+        "route": "upstream_pyproject_pins",
+        "command": "python -m pip install --no-deps transformers==4.52.1 tokenizers==0.21.0",
+        "status": "failed",
+        "exit_code": 1,
+        "reason": "the pinned runtime requires huggingface-hub<1.0 while the compatibility runtime exposed huggingface-hub 1.30.0; import failed before checkpoint download"
+      }
+    ]
+  },
+  {
+    "engine_id": "irodori_tts",
+    "attempts": [
+      {
+        "route": "official_uv_extra_cu128",
+        "command": "uv sync --extra cu128",
+        "status": "failed",
+        "exit_code": 1,
+        "reason": "resolver selected a CUDA PyTorch environment and stopped with disk quota exceeded"
+      },
+      {
+        "route": "source_existing_cuda_compatibility",
+        "command": "python -m pip install -e upstream/Irodori-TTS --no-deps; reuse CUDA PyTorch and install documented runtime dependencies",
+        "status": "passed",
+        "exit_code": 0,
+        "reason": "v2 VoiceDesign checkpoint downloaded from the official Hub and the no-reference inference probe passed"
+      }
+    ]
+  },
+  {
+    "engine_id": "style_bert_vits2",
+    "attempts": [
+      {
+        "route": "official_pypi_resolution",
+        "command": "python -m pip install style-bert-vits2==2.5.0 --dry-run --ignore-installed",
+        "status": "resolved_not_installed",
+        "exit_code": 0,
+        "reason": "dependency resolution was inspected; the full route would install a second CUDA stack, so it was not allowed to consume the temporary quota"
+      },
+      {
+        "route": "upstream_source_existing_cuda",
+        "command": "python -m pip install -e upstream/Style-Bert-VITS2 --no-deps; install inference requirements with numpy==1.26.4",
+        "status": "passed",
+        "exit_code": 0,
+        "reason": "fixed JP-Extra checkpoint, BERT frontend, and CUDA inference probe passed"
+      }
+    ]
+  },
+  {
+    "engine_id": "voicevox",
+    "attempts": [
+      {
+        "route": "official_docker",
+        "command": "docker pull voicevox/voicevox_engine:0.25.2; docker run --gpus all -p 50021:50021",
+        "status": "passed",
+        "exit_code": 0,
+        "reason": "endpoint /version returned 0.25.2; image digest is recorded in the research document"
+      }
+    ]
+  }
+]

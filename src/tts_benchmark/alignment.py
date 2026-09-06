@@ -2,6 +2,46 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping, Sequence
+
+
+def ctc_greedy_alignment(
+    logits: Sequence[Sequence[float]],
+    token_map: Mapping[int, str],
+    blank_id: int = 0,
+) -> list[dict[str, int | str]]:
+    """Return collapsed CTC tokens with half-open frame spans.
+
+    This is an evidence export, not a forced alignment claim: it records the
+    frames selected by greedy CTC decoding and leaves acoustic-to-text timing
+    calibration to the caller.
+    """
+    aligned: list[dict[str, int | str]] = []
+    active: dict[str, int | str] | None = None
+    for frame, row in enumerate(logits):
+        if not row:
+            continue
+        token_id = max(range(len(row)), key=row.__getitem__)
+        if token_id == blank_id:
+            if active is not None:
+                aligned.append(active)
+                active = None
+            continue
+        if active is not None and active["token_id"] == token_id:
+            active["end_frame"] = frame + 1
+            continue
+        if active is not None:
+            aligned.append(active)
+        active = {
+            "token_id": token_id,
+            "token": token_map.get(token_id, "<unk>"),
+            "start_frame": frame,
+            "end_frame": frame + 1,
+        }
+    if active is not None:
+        aligned.append(active)
+    return aligned
+
 
 def observed_for_reference_span(reference: str, hypothesis: str, start: int, end: int) -> str:
     """Return hypothesis characters aligned to ``reference[start:end]``.

@@ -9,6 +9,7 @@ import importlib.util
 import json
 import os
 import sys
+import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
 from statistics import mean
@@ -19,7 +20,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
-from tts_benchmark.alignment import observed_for_reference_span
+from tts_benchmark.alignment import ctc_greedy_alignment, observed_for_reference_span
 from tts_benchmark.benchmark import load_cases
 from tts_benchmark.metrics import (
     assess_pronunciation,
@@ -150,11 +151,17 @@ class KanaRecognizer:
                 inputs.input_values.to(self.device),
                 attention_mask=inputs.attention_mask.to(self.device),
             )
-        kana_ids = outputs["kana_logits"].squeeze(0).argmax(dim=-1).tolist()
-        phoneme_ids = outputs["phoneme_logits"].squeeze(0).argmax(dim=-1).tolist()
+        kana_logits = outputs["kana_logits"].squeeze(0)
+        phoneme_logits = outputs["phoneme_logits"].squeeze(0)
+        kana_ids = kana_logits.argmax(dim=-1).tolist()
+        phoneme_ids = phoneme_logits.argmax(dim=-1).tolist()
         return {
             "kana": self.kana_vocab.decode(kana_ids),
             "phonemes": self.phoneme_vocab.decode(phoneme_ids),
+            "kana_ctc_alignment": ctc_greedy_alignment(kana_logits.tolist(), self.kana_vocab.itos),
+            "phoneme_ctc_alignment": ctc_greedy_alignment(
+                phoneme_logits.tolist(), self.phoneme_vocab.itos
+            ),
             "evaluator": KANA_MODEL_ID,
             "device": str(self.device),
         }
@@ -185,6 +192,9 @@ def _assess_case_pronunciation(
         "status": "acoustic_alignment",
         "evaluator": kana_result.get("evaluator"),
         "phoneme_ctc_output": kana_result.get("phonemes"),
+        "kana_ctc_alignment": kana_result.get("kana_ctc_alignment"),
+        "phoneme_ctc_alignment": kana_result.get("phoneme_ctc_alignment"),
+        "alignment_timing": "ctc_frame_spans_without_acoustic_time_calibration",
         "full_kana_output": full_kana,
         "reference_context_kana": reference,
         "target_span_indices": [start, end],
@@ -244,7 +254,11 @@ def main() -> int:
     parser.add_argument("--cases", type=Path, default=ROOT / "tests/cases.yaml")
     parser.add_argument("--audio-dir", type=Path, default=ROOT / "tmp/audio")
     parser.add_argument("--stt-model", default="small")
-    parser.add_argument("--stt-cache", type=Path, default=Path("/tmp/tts-local-benchmark/model-cache/stt"))
+    parser.add_argument(
+        "--stt-cache",
+        type=Path,
+        default=Path(tempfile.gettempdir()) / "tts-local-benchmark/model-cache/stt",
+    )
     parser.add_argument("--kana-checkpoint", type=Path)
     parser.add_argument("--kana-repo", type=Path, default=KANA_REPO_ROOT)
     parser.add_argument("--skip-stt", action="store_true")
