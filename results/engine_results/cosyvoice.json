@@ -1,0 +1,32 @@
+{
+  "engine": {
+    "engine_id": "cosyvoice",
+    "engine_name": "CosyVoice",
+    "version": "074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc",
+    "source_url": "https://github.com/QwenAudio/CosyVoice",
+    "license": {
+      "code": "Apache-2.0",
+      "model": "checkpoint-specific; re-check model card",
+      "audio": "not redistributed"
+    },
+    "local_inference": null,
+    "japanese_support": "限定的",
+    "install_status": "対象外",
+    "install_notes": "Included for completeness; Japanese/local expressive suitability was not established by a runnable local setup here.",
+    "model_size_gb": null,
+    "peak_vram_gb": null,
+    "peak_ram_gb": null,
+    "generation_rtf": null,
+    "automation_score": null,
+    "pronunciation_control_score": null,
+    "expression_score": null,
+    "naturalness_score": null,
+    "content_accuracy_score": null,
+    "overall_notes": "Included for completeness; Japanese/local expressive suitability was not established by a runnable local setup here. No local adapter/checkpoint was run; scores remain null rather than zero.",
+    "human_review_required_count": 0,
+    "case_count": 0,
+    "successful_case_count": 0,
+    "failed_case_count": 0
+  },
+  "case_results": []
+}

@@ -1,0 +1,100 @@
+engines:
+  - engine_id: qwen3_tts
+    engine_name: Qwen3-TTS
+    source_url: https://github.com/QwenLM/Qwen3-TTS
+    adapter: unavailable
+    version: "022e286b98fbec7e1e916cb940cdf532cd9f488e"
+    japanese_support: 公式
+    license:
+      code: Apache-2.0
+      model: "Qwen checkpoint/model-card terms; re-check selected checkpoint"
+      audio: "depends on model and speaker input; not redistributed"
+    notes: "Natural-language instruction and voice-design capabilities are strong candidates, but no compatible local checkpoint was installed in this run."
+  - engine_id: indextts_25
+    engine_name: IndexTTS-2.5
+    source_url: https://github.com/index-tts/index-tts
+    adapter: unavailable
+    version: "ee40fa7d6c6b8a2c7f06105f9f1e65775b74868c"
+    japanese_support: 公式
+    license:
+      code: "repository license file is a bilibili Model Use License Agreement"
+      model: "bilibili Model Use License Agreement; re-check selected checkpoint"
+      audio: "not redistributed"
+    notes: "Candidate for expressive and controllable speech; installation/model acquisition was not completed in this snapshot."
+  - engine_id: aivis
+    engine_name: AivisSpeech Engine
+    source_url: https://github.com/Aivis-Project/AivisSpeech-Engine
+    adapter: aivis_http
+    endpoint: http://127.0.0.1:10101
+    version: "da5d4aa06bf47333d641b8b48f37ddd7a6be5ffa"
+    speaker_id: 606865152
+    japanese_support: 公式
+    license:
+      code: LGPL-3.0
+      model: "AIVMX model-specific terms; model omitted from this repository"
+      audio: "voice/model-specific terms; verify before publication"
+    style_map:
+      neutral: {speaker_id: 606865152, parameters: default}
+      calm: {speaker_id: 888753763, parameters: default}
+      cheerful: {speaker_id: 888753762, parameters: default}
+      sad: {speaker_id: 888753765, parameters: default}
+      angry: {speaker_id: 888753764, parameters: default}
+      energetic: {speaker_id: 888753762, parameters: speed_scale_1.1}
+      whisper_or_soft: {speaker_id: 606865152, parameters: volume_scale_0.75}
+      slow_explanatory: {speaker_id: 888753763, parameters: speed_scale_0.85}
+      fast_excited: {speaker_id: 888753762, parameters: speed_scale_1.2}
+  - engine_id: style_bert_vits2
+    engine_name: Style-Bert-VITS2
+    source_url: https://github.com/litagin02/Style-Bert-VITS2
+    adapter: unavailable
+    version: "66de777e06392c0f313600be03c43ef96658b244"
+    japanese_support: 公式
+    license:
+      code: "AGPL-3.0; text/user_dict module is LGPL-3.0"
+      model: "model-specific; checkpoint omitted"
+      audio: "speaker/model-specific terms"
+    notes: "Japanese style/prosody candidate; no reproducible checkpoint was available locally during this run."
+  - engine_id: voicevox
+    engine_name: VOICEVOX Engine
+    source_url: https://github.com/VOICEVOX/voicevox_engine
+    adapter: voicevox_http
+    endpoint: http://127.0.0.1:50021
+    version: "7aed82202a2fcff59d35def8899733db63c3fc7f"
+    speaker_id: 0
+    japanese_support: 公式
+    license:
+      code: "LGPL-3.0 or a separate source-code-non-disclosure license; obtain the applicable license"
+      model: "speaker/model-specific terms"
+      audio: "VOICEVOX character and voice usage conditions apply"
+    style_map:
+      neutral: {speaker_id: 0, parameters: default}
+      calm: {speaker_id: 0, parameters: speed_scale_0.9}
+      cheerful: {speaker_id: 1, parameters: default}
+      sad: {speaker_id: 0, parameters: intonation_scale_0.85}
+      angry: {speaker_id: 1, parameters: intonation_scale_1.25}
+      energetic: {speaker_id: 1, parameters: speed_scale_1.15}
+      whisper_or_soft: {speaker_id: 0, parameters: volume_scale_0.75}
+      slow_explanatory: {speaker_id: 0, parameters: speed_scale_0.85}
+      fast_excited: {speaker_id: 1, parameters: speed_scale_1.2}
+  - engine_id: coeiroink
+    engine_name: COEIROINK
+    source_url: https://coeiroink.com/terms
+    adapter: unavailable
+    version: "4e0cebd681bec13e6cdcc61d59e5efd9c588a686"
+    japanese_support: 公式
+    license:
+      code: "repository license not asserted; software terms apply"
+      model: "voice/model-specific; redistribution prohibited unless permitted"
+      audio: "credit required under applicable terms"
+    notes: "Kept out of generated/public assets until voice-specific credit and redistribution conditions are checked."
+  - engine_id: cosyvoice
+    engine_name: CosyVoice
+    source_url: https://github.com/QwenAudio/CosyVoice
+    adapter: unavailable
+    version: "074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc"
+    japanese_support: 限定的
+    license:
+      code: Apache-2.0
+      model: "checkpoint-specific; re-check model card"
+      audio: "not redistributed"
+    notes: "Included for completeness; Japanese/local expressive suitability was not established by a runnable local setup here."

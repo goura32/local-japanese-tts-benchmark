@@ -1,0 +1,32 @@
+{
+  "engine": {
+    "engine_id": "qwen3_tts",
+    "engine_name": "Qwen3-TTS",
+    "version": "022e286b98fbec7e1e916cb940cdf532cd9f488e",
+    "source_url": "https://github.com/QwenLM/Qwen3-TTS",
+    "license": {
+      "code": "Apache-2.0",
+      "model": "Qwen checkpoint/model-card terms; re-check selected checkpoint",
+      "audio": "depends on model and speaker input; not redistributed"
+    },
+    "local_inference": null,
+    "japanese_support": "公式",
+    "install_status": "対象外",
+    "install_notes": "Natural-language instruction and voice-design capabilities are strong candidates, but no compatible local checkpoint was installed in this run.",
+    "model_size_gb": null,
+    "peak_vram_gb": null,
+    "peak_ram_gb": null,
+    "generation_rtf": null,
+    "automation_score": null,
+    "pronunciation_control_score": null,
+    "expression_score": null,
+    "naturalness_score": null,
+    "content_accuracy_score": null,
+    "overall_notes": "Natural-language instruction and voice-design capabilities are strong candidates, but no compatible local checkpoint was installed in this run. No local adapter/checkpoint was run; scores remain null rather than zero.",
+    "human_review_required_count": 0,
+    "case_count": 0,
+    "successful_case_count": 0,
+    "failed_case_count": 0
+  },
+  "case_results": []
+}

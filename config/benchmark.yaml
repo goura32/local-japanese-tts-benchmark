@@ -1,0 +1,22 @@
+schema_version: "1.0"
+run_date: runtime
+locale: ja-JP
+sample_rate_hz: engine_native
+stt:
+  primary: faster-whisper-small
+  language: ja
+  model_cache: "${TTS_BENCHMARK_CACHE:-~/.cache/tts-local-benchmark}"
+pronunciation:
+  evaluator: hiragana_ctc_when_available
+  fallback: engine_reading_metadata_only
+  mismatch_policy: 要確認
+common_styles:
+  - neutral
+  - cheerful
+  - sad
+  - angry
+  - calm
+  - energetic
+  - whisper_or_soft
+  - slow_explanatory
+  - fast_excited

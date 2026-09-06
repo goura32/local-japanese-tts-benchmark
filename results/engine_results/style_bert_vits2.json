@@ -1,0 +1,32 @@
+{
+  "engine": {
+    "engine_id": "style_bert_vits2",
+    "engine_name": "Style-Bert-VITS2",
+    "version": "66de777e06392c0f313600be03c43ef96658b244",
+    "source_url": "https://github.com/litagin02/Style-Bert-VITS2",
+    "license": {
+      "code": "AGPL-3.0; text/user_dict module is LGPL-3.0",
+      "model": "model-specific; checkpoint omitted",
+      "audio": "speaker/model-specific terms"
+    },
+    "local_inference": null,
+    "japanese_support": "公式",
+    "install_status": "対象外",
+    "install_notes": "Japanese style/prosody candidate; no reproducible checkpoint was available locally during this run.",
+    "model_size_gb": null,
+    "peak_vram_gb": null,
+    "peak_ram_gb": null,
+    "generation_rtf": null,
+    "automation_score": null,
+    "pronunciation_control_score": null,
+    "expression_score": null,
+    "naturalness_score": null,
+    "content_accuracy_score": null,
+    "overall_notes": "Japanese style/prosody candidate; no reproducible checkpoint was available locally during this run. No local adapter/checkpoint was run; scores remain null rather than zero.",
+    "human_review_required_count": 0,
+    "case_count": 0,
+    "successful_case_count": 0,
+    "failed_case_count": 0
+  },
+  "case_results": []
+}

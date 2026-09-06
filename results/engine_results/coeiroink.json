@@ -1,0 +1,32 @@
+{
+  "engine": {
+    "engine_id": "coeiroink",
+    "engine_name": "COEIROINK",
+    "version": "4e0cebd681bec13e6cdcc61d59e5efd9c588a686",
+    "source_url": "https://coeiroink.com/terms",
+    "license": {
+      "code": "repository license not asserted; software terms apply",
+      "model": "voice/model-specific; redistribution prohibited unless permitted",
+      "audio": "credit required under applicable terms"
+    },
+    "local_inference": null,
+    "japanese_support": "公式",
+    "install_status": "対象外",
+    "install_notes": "Kept out of generated/public assets until voice-specific credit and redistribution conditions are checked.",
+    "model_size_gb": null,
+    "peak_vram_gb": null,
+    "peak_ram_gb": null,
+    "generation_rtf": null,
+    "automation_score": null,
+    "pronunciation_control_score": null,
+    "expression_score": null,
+    "naturalness_score": null,
+    "content_accuracy_score": null,
+    "overall_notes": "Kept out of generated/public assets until voice-specific credit and redistribution conditions are checked. No local adapter/checkpoint was run; scores remain null rather than zero.",
+    "human_review_required_count": 0,
+    "case_count": 0,
+    "successful_case_count": 0,
+    "failed_case_count": 0
+  },
+  "case_results": []
+}

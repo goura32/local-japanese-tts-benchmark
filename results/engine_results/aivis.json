@@ -1,0 +1,2456 @@
+{
+  "engine": {
+    "engine_id": "aivis",
+    "engine_name": "AivisSpeech Engine",
+    "version": "da5d4aa06bf47333d641b8b48f37ddd7a6be5ffa",
+    "source_url": "https://github.com/Aivis-Project/AivisSpeech-Engine",
+    "license": {
+      "code": "LGPL-3.0",
+      "model": "AIVMX model-specific terms; model omitted from this repository",
+      "audio": "voice/model-specific terms; verify before publication"
+    },
+    "local_inference": true,
+    "japanese_support": "公式",
+    "install_status": "成功",
+    "install_notes": "Local HTTP endpoint probe succeeded: http://127.0.0.1:10101/version -> 1.2.0. Model footprint is the downloaded AIVMX file size, not committed.",
+    "model_size_gb": 0.25161968,
+    "peak_vram_gb": 0.0146,
+    "peak_ram_gb": 2.2499,
+    "generation_rtf": 0.502354,
+    "automation_score": 4.0,
+    "pronunciation_control_score": 1.667,
+    "expression_score": 3.0,
+    "naturalness_score": null,
+    "content_accuracy_score": 4.095,
+    "overall_notes": "The local run generated 30 of 30 common cases through the recorded HTTP endpoint. Round-trip content accuracy was computed from the local faster-whisper transcript and normalized CER; this is not a human listening score and may hide pronunciation errors through language-model context. Ambiguous readings were evaluated with a separate dual-CTC hiragana/phoneme recognizer when its checkpoint was available. The engine-provided reading metadata is retained as provenance but is not treated as acoustic proof. One retry, replacing only the target span with its expected kana, is recorded after an unambiguous acoustic mismatch. Automatic naturalness/MOS was not asserted because no validated local MOS estimator was available in this run; WAV format, duration, silence, level, pitch proxy, and anomaly flags are retained. 30/30 successful cases had no simple acoustic anomaly flags.",
+    "human_review_required_count": 7,
+    "case_count": 30,
+    "successful_case_count": 30,
+    "failed_case_count": 0,
+    "retry_count": 8
+  },
+  "case_results": [
+    {
+      "engine_id": "aivis",
+      "case_id": "n01",
+      "raw_input": "今日は少し雲が多いものの、午後には晴れ間が広がる見込みです。外出するなら、折りたたみ傘があると安心でしょう。",
+      "effective_input": "今日は少し雲が多いものの、午後には晴れ間が広がる見込みです。外出するなら、折りたたみ傘があると安心でしょう。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "今日は少し雲が多いものの、午後には晴れ間が広がる見込みです。外出するなら、折りたたみ傘があると安心でしょう。"
+      },
+      "audio_path": "tmp/audio/aivis/n01.wav",
+      "duration_sec": 8.013515,
+      "generation_sec": 1.734059,
+      "stt_transcript": "今日は少し雲が多いものの、ここには晴れ間が広がる見込みです外出するなら、折りたたみなさがあると安心でしょ",
+      "cer": 0.12963,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "今日は少し雲が多いものの、午後には晴れ間が広がる見込みです。外出するなら、折りたたみ傘があると安心でしょう。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 2
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 353396,
+        "duration_sec": 8.013515,
+        "rms_dbfs": -18.776,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.054863,
+        "zero_crossing_rate": 0.056764,
+        "estimated_f0_hz": 112.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "n02",
+      "raw_input": "静かな部屋で本を開くと、遠くから時計の音だけが聞こえてきました。急ぐ必要はありません。ゆっくり読み進めてください。",
+      "effective_input": "静かな部屋で本を開くと、遠くから時計の音だけが聞こえてきました。急ぐ必要はありません。ゆっくり読み進めてください。",
+      "requested_style": "calm",
+      "mapped_style_or_parameters": {
+        "speaker_id": 888753763,
+        "parameters": "default",
+        "engine_reading_metadata": "静かな部屋で本を開くと、遠くから時計の音だけが聞こえてきました。急ぐ必要はありません。ゆっくり読み進めてください。"
+      },
+      "audio_path": "tmp/audio/aivis/n02.wav",
+      "duration_sec": 9.894263,
+      "generation_sec": 2.432578,
+      "stt_transcript": "静かな部屋で本を開くと遠くから時計の音だけが聞こえてきました 急ぐ必要はありませんゆっくり読み進めてください",
+      "cer": 0.070175,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "静かな部屋で本を開くと、遠くから時計の音だけが聞こえてきました。急ぐ必要はありません。ゆっくり読み進めてください。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 436337,
+        "duration_sec": 9.894263,
+        "rms_dbfs": -20.152,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.294949,
+        "zero_crossing_rate": 0.09676,
+        "estimated_f0_hz": 400.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "n03",
+      "raw_input": "まず設定画面を開きます。次に、音声モデルを選択してください。最後に保存ボタンを押せば、設定は完了です。",
+      "effective_input": "まず設定画面を開きます。次に、音声モデルを選択してください。最後に保存ボタンを押せば、設定は完了です。",
+      "requested_style": "slow_explanatory",
+      "mapped_style_or_parameters": {
+        "speaker_id": 888753763,
+        "parameters": "speed_scale_0.85",
+        "engine_reading_metadata": "まず設定画面を開きます。次に、音声モデルを選択してください。最後に保存ボタンを押せば、設定は完了です。"
+      },
+      "audio_path": "tmp/audio/aivis/n03.wav",
+      "duration_sec": 10.835873,
+      "generation_sec": 2.236714,
+      "stt_transcript": "まず設定画面を開きます。次に音声モデルを選択してください。最後に保存ボタンを押せば設定は完了です。",
+      "cer": 0.039216,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "まず設定画面を開きます。次に、音声モデルを選択してください。最後に保存ボタンを押せば、設定は完了です。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 477862,
+        "duration_sec": 10.835873,
+        "rms_dbfs": -17.495,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.300738,
+        "zero_crossing_rate": 0.111924,
+        "estimated_f0_hz": 387.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "e01",
+      "raw_input": "やった！ついに完成したよ。思っていたより、ずっといい出来になったね。",
+      "effective_input": "やった！ついに完成したよ。思っていたより、ずっといい出来になったね。",
+      "requested_style": "cheerful",
+      "mapped_style_or_parameters": {
+        "speaker_id": 888753762,
+        "parameters": "default",
+        "engine_reading_metadata": "やった！ついに完成したよ。思っていたより、ずっといい出来になったね。"
+      },
+      "audio_path": "tmp/audio/aivis/e01.wav",
+      "duration_sec": 5.505737,
+      "generation_sec": 1.395171,
+      "stt_transcript": "やった! ついに完成したよ! 思っていたより ずっといい出来になったね!",
+      "cer": 0.088235,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "やった！ついに完成したよ。思っていたより、ずっといい出来になったね。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 242803,
+        "duration_sec": 5.505737,
+        "rms_dbfs": -17.663,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.333333,
+        "zero_crossing_rate": 0.083311,
+        "estimated_f0_hz": 375.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "e02",
+      "raw_input": "そうなんだ。もう会えないと思うと、やっぱり少し寂しいね。",
+      "effective_input": "そうなんだ。もう会えないと思うと、やっぱり少し寂しいね。",
+      "requested_style": "sad",
+      "mapped_style_or_parameters": {
+        "speaker_id": 888753765,
+        "parameters": "default",
+        "engine_reading_metadata": "そうなんだ。もう会えないと思うと、やっぱり少し寂しいね。"
+      },
+      "audio_path": "tmp/audio/aivis/e02.wav",
+      "duration_sec": 5.19229,
+      "generation_sec": 1.308749,
+      "stt_transcript": "そうなんだもう会えないと思うとやっぱり少し寂しいね",
+      "cer": 0.107143,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "そうなんだ。もう会えないと思うと、やっぱり少し寂しいね。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 228980,
+        "duration_sec": 5.19229,
+        "rms_dbfs": -17.668,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.342308,
+        "zero_crossing_rate": 0.090262,
+        "estimated_f0_hz": 200.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "e03",
+      "raw_input": "それは違うよ。約束したことを、なかったことにはできないでしょう。",
+      "effective_input": "それは違うよ。約束したことを、なかったことにはできないでしょう。",
+      "requested_style": "angry",
+      "mapped_style_or_parameters": {
+        "speaker_id": 888753764,
+        "parameters": "default",
+        "engine_reading_metadata": "それは違うよ。約束したことを、なかったことにはできないでしょう。"
+      },
+      "audio_path": "tmp/audio/aivis/e03.wav",
+      "duration_sec": 5.505714,
+      "generation_sec": 1.364422,
+      "stt_transcript": "それは違うよ、約束したこと、なかったことにはできないでしょう",
+      "cer": 0.09375,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "それは違うよ。約束したことを、なかったことにはできないでしょう。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 242802,
+        "duration_sec": 5.505714,
+        "rms_dbfs": -17.903,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.351449,
+        "zero_crossing_rate": 0.08495,
+        "estimated_f0_hz": 500.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "e04",
+      "raw_input": "さあ、始めよう！準備はできてる？今日は一気に最後までやってみよう！",
+      "effective_input": "さあ、始めよう！準備はできてる？今日は一気に最後までやってみよう！",
+      "requested_style": "energetic",
+      "mapped_style_or_parameters": {
+        "speaker_id": 888753762,
+        "parameters": "speed_scale_1.1",
+        "engine_reading_metadata": "さあ、始めよう！準備はできてる？今日は一気に最後までやってみよう！"
+      },
+      "audio_path": "tmp/audio/aivis/e04.wav",
+      "duration_sec": 5.069592,
+      "generation_sec": 1.33722,
+      "stt_transcript": "さあ始めよう。準備はできてる?今日は一気に最後までやってみよう",
+      "cer": 0.090909,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "さあ、始めよう！準備はできてる？今日は一気に最後までやってみよう！",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 223569,
+        "duration_sec": 5.069592,
+        "rms_dbfs": -17.841,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.299213,
+        "zero_crossing_rate": 0.086059,
+        "estimated_f0_hz": 162.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "e05",
+      "raw_input": "小さな声で話すね。みんなが眠っているから、起こさないようにしよう。",
+      "effective_input": "小さな声で話すね。みんなが眠っているから、起こさないようにしよう。",
+      "requested_style": "whisper_or_soft",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "volume_scale_0.75",
+        "engine_reading_metadata": "小さな声で話すね。みんなが眠っているから、起こさないようにしよう。"
+      },
+      "audio_path": "tmp/audio/aivis/e05.wav",
+      "duration_sec": 4.832381,
+      "generation_sec": 1.685093,
+      "stt_transcript": "小さな声で話すね、みんなが眠っているから起こさないようにしよう",
+      "cer": 0.090909,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "小さな声で話すね。みんなが眠っているから、起こさないようにしよう。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 213108,
+        "duration_sec": 4.832381,
+        "rms_dbfs": -17.867,
+        "peak_dbfs": -2.499,
+        "silence_ratio": 0.061983,
+        "zero_crossing_rate": 0.052011,
+        "estimated_f0_hz": 125.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "e06",
+      "raw_input": "聞いて聞いて、すごいことがあったんだ！さっき結果が出て、全部うまくいったんだよ！",
+      "effective_input": "聞いて聞いて、すごいことがあったんだ！さっき結果が出て、全部うまくいったんだよ！",
+      "requested_style": "fast_excited",
+      "mapped_style_or_parameters": {
+        "speaker_id": 888753762,
+        "parameters": "speed_scale_1.2",
+        "engine_reading_metadata": "聞いて聞いて、すごいことがあったんだ！さっき結果が出て、全部うまくいったんだよ！"
+      },
+      "audio_path": "tmp/audio/aivis/e06.wav",
+      "duration_sec": 5.112472,
+      "generation_sec": 1.819568,
+      "stt_transcript": "聞いて聞いてすごいことがあったんだ。さっき結果が出て、全部うまくいったんだよ。",
+      "cer": 0.075,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "聞いて聞いて、すごいことがあったんだ！さっき結果が出て、全部うまくいったんだよ！",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 225460,
+        "duration_sec": 5.112472,
+        "rms_dbfs": -18.17,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.289062,
+        "zero_crossing_rate": 0.089701,
+        "estimated_f0_hz": 462.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p01",
+      "raw_input": "今日は一日中、資料を整理していました。",
+      "effective_input": "今日はいちにちじゅう、資料を整理していました。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "今日は一日中、資料を整理していました。"
+      },
+      "audio_path": "tmp/audio/retry/aivis/p01.wav",
+      "duration_sec": 3.032834,
+      "generation_sec": 0.973718,
+      "stt_transcript": "今日は一日中治療を整理していました",
+      "cer": 0.210526,
+      "expected_reading": "いちにちじゅう",
+      "pronunciation_result": "不合格",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "今日は一日中、資料を整理していました。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "n sh i ry s e e r i sh I t e i m a sh I t a",
+        "full_kana_output": "にしりょーをせーりしていました",
+        "reference_context_kana": "きょーわいちにちじゅうしりょーをせーりしていました",
+        "target_span_indices": [
+          4,
+          11
+        ],
+        "target_observed_kana": "に",
+        "target_error_rate": 0.8571428571428571,
+        "retry": {
+          "effective_input": "今日はいちにちじゅう、資料を整理していました。",
+          "audio_path": "tmp/audio/retry/aivis/p01.wav",
+          "duration_sec": 3.032834,
+          "generation_sec": 0.973718,
+          "acoustic_features": {
+            "sample_rate_hz": 44100,
+            "channels": 1,
+            "bits_per_sample": 16,
+            "frame_count": 133748,
+            "duration_sec": 3.032834,
+            "rms_dbfs": -15.706,
+            "peak_dbfs": -0.0,
+            "silence_ratio": 0.078947,
+            "zero_crossing_rate": 0.07239,
+            "estimated_f0_hz": 50.0,
+            "anomaly_flags": []
+          },
+          "pronunciation_result": "不合格",
+          "pronunciation_evidence": {
+            "status": "acoustic_alignment",
+            "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+            "phoneme_ctc_output": "ch i n sh i ry s e e r i sh I t e i m a sh I t a",
+            "full_kana_output": "ちしりょーせーりしていました",
+            "reference_context_kana": "きょーわいちにちじゅうしりょーをせーりしていました",
+            "target_span_indices": [
+              4,
+              11
+            ],
+            "target_observed_kana": "ち",
+            "target_error_rate": 0.8571428571428571
+          },
+          "stt_transcript": "今日は一日中治療を整理していました",
+          "cer": 0.210526,
+          "error": null
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 133748,
+        "duration_sec": 3.032834,
+        "rms_dbfs": -15.706,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.078947,
+        "zero_crossing_rate": 0.07239,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": true,
+      "error": null,
+      "human_review_required": false,
+      "first_attempt": {
+        "effective_input": "今日は一日中、資料を整理していました。",
+        "audio_path": "tmp/audio/aivis/p01.wav",
+        "duration_sec": 2.963175,
+        "generation_sec": 1.397364,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 130676,
+          "duration_sec": 2.963175,
+          "rms_dbfs": -16.985,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.080537,
+          "zero_crossing_rate": 0.071368,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "engine_reading_metadata": "今日は一日中、資料を整理していました。",
+          "stt": {
+            "system": "faster-whisper",
+            "language": "ja",
+            "language_probability": 1,
+            "segment_count": 1
+          },
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "n sh i ry s e e r i sh I t e i m a sh I t a",
+          "full_kana_output": "にしりょーをせーりしていました",
+          "reference_context_kana": "きょーわいちにちじゅうしりょーをせーりしていました",
+          "target_span_indices": [
+            4,
+            11
+          ],
+          "target_observed_kana": "に",
+          "target_error_rate": 0.8571428571428571
+        },
+        "stt_transcript": "今日は1日中資料を整理していました",
+        "cer": 0.157895
+      },
+      "retry_attempt": {
+        "effective_input": "今日はいちにちじゅう、資料を整理していました。",
+        "audio_path": "tmp/audio/retry/aivis/p01.wav",
+        "duration_sec": 3.032834,
+        "generation_sec": 0.973718,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 133748,
+          "duration_sec": 3.032834,
+          "rms_dbfs": -15.706,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.078947,
+          "zero_crossing_rate": 0.07239,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "ch i n sh i ry s e e r i sh I t e i m a sh I t a",
+          "full_kana_output": "ちしりょーせーりしていました",
+          "reference_context_kana": "きょーわいちにちじゅうしりょーをせーりしていました",
+          "target_span_indices": [
+            4,
+            11
+          ],
+          "target_observed_kana": "ち",
+          "target_error_rate": 0.8571428571428571
+        },
+        "stt_transcript": "今日は一日中治療を整理していました",
+        "cer": 0.210526,
+        "error": null
+      }
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p02",
+      "raw_input": "来月一日に、新しいサービスを開始します。",
+      "effective_input": "来月ついたちに、新しいサービスを開始します。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "来月一日に、新しいサービスを開始します。"
+      },
+      "audio_path": "tmp/audio/retry/aivis/p02.wav",
+      "duration_sec": 3.485624,
+      "generation_sec": 1.055804,
+      "stt_transcript": "来月1日に新しいサービスを開始します",
+      "cer": 0.15,
+      "expected_reading": "ついたち",
+      "pronunciation_result": "要確認",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "来月一日に、新しいサービスを開始します。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "u i n a t a r a sh i i s a a b i s u o k a i sh sh i m a s U",
+        "full_kana_output": "いにあたらしいさーびすをかいしします",
+        "reference_context_kana": "らいげつついたちにあたらしいさーびすをかいしします",
+        "target_span_indices": [
+          4,
+          8
+        ],
+        "target_observed_kana": "い",
+        "target_error_rate": 0.75,
+        "retry": {
+          "effective_input": "来月ついたちに、新しいサービスを開始します。",
+          "audio_path": "tmp/audio/retry/aivis/p02.wav",
+          "duration_sec": 3.485624,
+          "generation_sec": 1.055804,
+          "acoustic_features": {
+            "sample_rate_hz": 44100,
+            "channels": 1,
+            "bits_per_sample": 16,
+            "frame_count": 153716,
+            "duration_sec": 3.485624,
+            "rms_dbfs": -16.314,
+            "peak_dbfs": -0.0,
+            "silence_ratio": 0.08,
+            "zero_crossing_rate": 0.095124,
+            "estimated_f0_hz": 150.0,
+            "anomaly_flags": []
+          },
+          "pronunciation_result": "要確認",
+          "pronunciation_evidence": {
+            "status": "acoustic_alignment",
+            "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+            "phoneme_ctc_output": "a t a r a sh i i s a a b s u o k a i sh i sh i m a s U",
+            "full_kana_output": "あたらしいさーびすをかいしします",
+            "reference_context_kana": "らいげつついたちにあたらしいさーびすをかいしします",
+            "target_span_indices": [
+              4,
+              8
+            ],
+            "target_observed_kana": "",
+            "target_error_rate": null
+          },
+          "stt_transcript": "来月1日に新しいサービスを開始します",
+          "cer": 0.15,
+          "error": null
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 153716,
+        "duration_sec": 3.485624,
+        "rms_dbfs": -16.314,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.08,
+        "zero_crossing_rate": 0.095124,
+        "estimated_f0_hz": 150.0,
+        "anomaly_flags": []
+      },
+      "retry_used": true,
+      "error": null,
+      "human_review_required": true,
+      "first_attempt": {
+        "effective_input": "来月一日に、新しいサービスを開始します。",
+        "audio_path": "tmp/audio/aivis/p02.wav",
+        "duration_sec": 3.427574,
+        "generation_sec": 1.104296,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 151156,
+          "duration_sec": 3.427574,
+          "rms_dbfs": -15.9,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.075581,
+          "zero_crossing_rate": 0.096934,
+          "estimated_f0_hz": 150.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "engine_reading_metadata": "来月一日に、新しいサービスを開始します。",
+          "stt": {
+            "system": "faster-whisper",
+            "language": "ja",
+            "language_probability": 1,
+            "segment_count": 1
+          },
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "u i n a t a r a sh i i s a a b i s u o k a i sh sh i m a s U",
+          "full_kana_output": "いにあたらしいさーびすをかいしします",
+          "reference_context_kana": "らいげつついたちにあたらしいさーびすをかいしします",
+          "target_span_indices": [
+            4,
+            8
+          ],
+          "target_observed_kana": "い",
+          "target_error_rate": 0.75
+        },
+        "stt_transcript": "来月1日に新しいサービスを開始します",
+        "cer": 0.15
+      },
+      "retry_attempt": {
+        "effective_input": "来月ついたちに、新しいサービスを開始します。",
+        "audio_path": "tmp/audio/retry/aivis/p02.wav",
+        "duration_sec": 3.485624,
+        "generation_sec": 1.055804,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 153716,
+          "duration_sec": 3.485624,
+          "rms_dbfs": -16.314,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.08,
+          "zero_crossing_rate": 0.095124,
+          "estimated_f0_hz": 150.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "要確認",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "a t a r a sh i i s a a b s u o k a i sh i sh i m a s U",
+          "full_kana_output": "あたらしいさーびすをかいしします",
+          "reference_context_kana": "らいげつついたちにあたらしいさーびすをかいしします",
+          "target_span_indices": [
+            4,
+            8
+          ],
+          "target_observed_kana": "",
+          "target_error_rate": null
+        },
+        "stt_transcript": "来月1日に新しいサービスを開始します",
+        "cer": 0.15,
+        "error": null
+      }
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p03",
+      "raw_input": "生物学の研究者が、新しい論文を発表しました。",
+      "effective_input": "生物学の研究者が、新しい論文を発表しました。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "生物学の研究者が、新しい論文を発表しました。"
+      },
+      "audio_path": "tmp/audio/aivis/p03.wav",
+      "duration_sec": 3.938413,
+      "generation_sec": 1.279884,
+      "stt_transcript": "生物学の研究者が新しい論文を発表しました",
+      "cer": 0.090909,
+      "expected_reading": "せいぶつがく",
+      "pronunciation_result": "要確認",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "生物学の研究者が、新しい論文を発表しました。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "ky sh g a t a r a sh i i r N b u N o h a cl py o o sh i m a sh I t a",
+        "full_kana_output": "けんきゅーしゃがあたらしいろんぶんをはっぴょーしました",
+        "reference_context_kana": "せいぶつがくのけんきゅーしゃがあたらしいろんぶんをはっぴょーしました",
+        "target_span_indices": [
+          0,
+          6
+        ],
+        "target_observed_kana": "",
+        "target_error_rate": null
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 173684,
+        "duration_sec": 3.938413,
+        "rms_dbfs": -15.593,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.076142,
+        "zero_crossing_rate": 0.059465,
+        "estimated_f0_hz": 62.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": true
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p04",
+      "raw_input": "この生物は傷みやすいので、冷蔵庫に入れてください。",
+      "effective_input": "この生物は傷みやすいので、冷蔵庫に入れてください。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "この生物は傷みやすいので、冷蔵庫に入れてください。"
+      },
+      "audio_path": "tmp/audio/aivis/p04.wav",
+      "duration_sec": 3.950023,
+      "generation_sec": 1.231691,
+      "stt_transcript": "この生物は痛みやすいので、映像庫に入れてください",
+      "cer": 0.16,
+      "expected_reading": "なまもの",
+      "pronunciation_result": "要確認",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "この生物は傷みやすいので、冷蔵庫に入れてください。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "i t a m y a s u i n o d e r e z o k o i i e t e k u d a s a",
+        "full_kana_output": "ぶいたみやすいのでれーぞこにいれてくださ",
+        "reference_context_kana": "このなまものわいたみやすいのでれーぞーこにいれてください",
+        "target_span_indices": [
+          2,
+          6
+        ],
+        "target_observed_kana": "",
+        "target_error_rate": null
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 174196,
+        "duration_sec": 3.950023,
+        "rms_dbfs": -17.83,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.085859,
+        "zero_crossing_rate": 0.0565,
+        "estimated_f0_hz": 125.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": true
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p05",
+      "raw_input": "国内の市場規模は、前年より大きくなりました。",
+      "effective_input": "国内のしじょう規模は、前年より大きくなりました。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "国内の市場規模は、前年より大きくなりました。"
+      },
+      "audio_path": "tmp/audio/retry/aivis/p05.wav",
+      "duration_sec": 3.729433,
+      "generation_sec": 1.147335,
+      "stt_transcript": "国内の市場規模は前年より大きくなりました",
+      "cer": 0.090909,
+      "expected_reading": "しじょう",
+      "pronunciation_result": "不合格",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "国内の市場規模は、前年より大きくなりました。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "w z e N n e N y o r o o k k u n a r i m a sh I t a",
+        "full_kana_output": "のじょーぼわぜんねんよりおーきくなりました",
+        "reference_context_kana": "こくないのしじょうきぼわぜんねんよりおーきくなりました",
+        "target_span_indices": [
+          5,
+          9
+        ],
+        "target_observed_kana": "じょ",
+        "target_error_rate": 0.5,
+        "retry": {
+          "effective_input": "国内のしじょう規模は、前年より大きくなりました。",
+          "audio_path": "tmp/audio/retry/aivis/p05.wav",
+          "duration_sec": 3.729433,
+          "generation_sec": 1.147335,
+          "acoustic_features": {
+            "sample_rate_hz": 44100,
+            "channels": 1,
+            "bits_per_sample": 16,
+            "frame_count": 164468,
+            "duration_sec": 3.729433,
+            "rms_dbfs": -16.18,
+            "peak_dbfs": -0.0,
+            "silence_ratio": 0.058824,
+            "zero_crossing_rate": 0.055683,
+            "estimated_f0_hz": 50.0,
+            "anomaly_flags": []
+          },
+          "pronunciation_result": "不合格",
+          "pronunciation_evidence": {
+            "status": "acoustic_alignment",
+            "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+            "phoneme_ctc_output": "w z e N n e N y o r o o k I k u n a r i m a sh I t a",
+            "full_kana_output": "じーぼわぜんねんよりおーきくなりました",
+            "reference_context_kana": "こくないのしじょうきぼわぜんねんよりおーきくなりました",
+            "target_span_indices": [
+              5,
+              9
+            ],
+            "target_observed_kana": "じ",
+            "target_error_rate": 0.75
+          },
+          "stt_transcript": "国内の市場規模は前年より大きくなりました",
+          "cer": 0.090909,
+          "error": null
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 164468,
+        "duration_sec": 3.729433,
+        "rms_dbfs": -16.18,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.058824,
+        "zero_crossing_rate": 0.055683,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": true,
+      "error": null,
+      "human_review_required": false,
+      "first_attempt": {
+        "effective_input": "国内の市場規模は、前年より大きくなりました。",
+        "audio_path": "tmp/audio/aivis/p05.wav",
+        "duration_sec": 3.682993,
+        "generation_sec": 1.184404,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 162420,
+          "duration_sec": 3.682993,
+          "rms_dbfs": -14.24,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.059459,
+          "zero_crossing_rate": 0.053996,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "engine_reading_metadata": "国内の市場規模は、前年より大きくなりました。",
+          "stt": {
+            "system": "faster-whisper",
+            "language": "ja",
+            "language_probability": 1,
+            "segment_count": 1
+          },
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "w z e N n e N y o r o o k k u n a r i m a sh I t a",
+          "full_kana_output": "のじょーぼわぜんねんよりおーきくなりました",
+          "reference_context_kana": "こくないのしじょうきぼわぜんねんよりおーきくなりました",
+          "target_span_indices": [
+            5,
+            9
+          ],
+          "target_observed_kana": "じょ",
+          "target_error_rate": 0.5
+        },
+        "stt_transcript": "国内の市場規模は前年より大きくなりました",
+        "cer": 0.090909
+      },
+      "retry_attempt": {
+        "effective_input": "国内のしじょう規模は、前年より大きくなりました。",
+        "audio_path": "tmp/audio/retry/aivis/p05.wav",
+        "duration_sec": 3.729433,
+        "generation_sec": 1.147335,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 164468,
+          "duration_sec": 3.729433,
+          "rms_dbfs": -16.18,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.058824,
+          "zero_crossing_rate": 0.055683,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "w z e N n e N y o r o o k I k u n a r i m a sh I t a",
+          "full_kana_output": "じーぼわぜんねんよりおーきくなりました",
+          "reference_context_kana": "こくないのしじょうきぼわぜんねんよりおーきくなりました",
+          "target_span_indices": [
+            5,
+            9
+          ],
+          "target_observed_kana": "じ",
+          "target_error_rate": 0.75
+        },
+        "stt_transcript": "国内の市場規模は前年より大きくなりました",
+        "cer": 0.090909,
+        "error": null
+      }
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p06",
+      "raw_input": "朝、市場で新鮮な魚を買いました。",
+      "effective_input": "朝、いちばで新鮮な魚を買いました。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "朝、市場で新鮮な魚を買いました。"
+      },
+      "audio_path": "tmp/audio/retry/aivis/p06.wav",
+      "duration_sec": 2.893515,
+      "generation_sec": 0.944095,
+      "stt_transcript": "朝、市場で賃鮮な魚を買いました",
+      "cer": 0.125,
+      "expected_reading": "いちば",
+      "pronunciation_result": "合格",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "朝、市場で新鮮な魚を買いました。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "sh i j o d e sh i N s e N n a s a k a n a o k a i m a sh I t a",
+        "full_kana_output": "しじょーでしんせんなさかなをかえました",
+        "reference_context_kana": "あさいちばでしんせんなさかなをかいました",
+        "target_span_indices": [
+          2,
+          5
+        ],
+        "target_observed_kana": "じょー",
+        "target_error_rate": 1.0,
+        "retry": {
+          "effective_input": "朝、いちばで新鮮な魚を買いました。",
+          "audio_path": "tmp/audio/retry/aivis/p06.wav",
+          "duration_sec": 2.893515,
+          "generation_sec": 0.944095,
+          "acoustic_features": {
+            "sample_rate_hz": 44100,
+            "channels": 1,
+            "bits_per_sample": 16,
+            "frame_count": 127604,
+            "duration_sec": 2.893515,
+            "rms_dbfs": -16.389,
+            "peak_dbfs": -0.0,
+            "silence_ratio": 0.082759,
+            "zero_crossing_rate": 0.064889,
+            "estimated_f0_hz": 150.0,
+            "anomaly_flags": []
+          },
+          "pronunciation_result": "合格",
+          "pronunciation_evidence": {
+            "status": "acoustic_alignment",
+            "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+            "phoneme_ctc_output": "i ch i b a d e ch i N s e N n o s a k a n a o k a e m a sh I t a",
+            "full_kana_output": "いちばでちんせんのさかなをかえました",
+            "reference_context_kana": "あさいちばでしんせんなさかなをかいました",
+            "target_span_indices": [
+              2,
+              5
+            ],
+            "target_observed_kana": "いちば",
+            "target_error_rate": 0.0
+          },
+          "stt_transcript": "朝、市場で賃鮮な魚を買いました",
+          "cer": 0.125,
+          "error": null
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 127604,
+        "duration_sec": 2.893515,
+        "rms_dbfs": -16.389,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.082759,
+        "zero_crossing_rate": 0.064889,
+        "estimated_f0_hz": 150.0,
+        "anomaly_flags": []
+      },
+      "retry_used": true,
+      "error": null,
+      "human_review_required": false,
+      "first_attempt": {
+        "effective_input": "朝、市場で新鮮な魚を買いました。",
+        "audio_path": "tmp/audio/aivis/p06.wav",
+        "duration_sec": 2.893515,
+        "generation_sec": 0.951044,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 127604,
+          "duration_sec": 2.893515,
+          "rms_dbfs": -16.432,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.068966,
+          "zero_crossing_rate": 0.067632,
+          "estimated_f0_hz": 137.5,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "engine_reading_metadata": "朝、市場で新鮮な魚を買いました。",
+          "stt": {
+            "system": "faster-whisper",
+            "language": "ja",
+            "language_probability": 1,
+            "segment_count": 1
+          },
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "sh i j o d e sh i N s e N n a s a k a n a o k a i m a sh I t a",
+          "full_kana_output": "しじょーでしんせんなさかなをかえました",
+          "reference_context_kana": "あさいちばでしんせんなさかなをかいました",
+          "target_span_indices": [
+            2,
+            5
+          ],
+          "target_observed_kana": "じょー",
+          "target_error_rate": 1.0
+        },
+        "stt_transcript": "朝、市場で沈船な魚を買いました",
+        "cer": 0.1875
+      },
+      "retry_attempt": {
+        "effective_input": "朝、いちばで新鮮な魚を買いました。",
+        "audio_path": "tmp/audio/retry/aivis/p06.wav",
+        "duration_sec": 2.893515,
+        "generation_sec": 0.944095,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 127604,
+          "duration_sec": 2.893515,
+          "rms_dbfs": -16.389,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.082759,
+          "zero_crossing_rate": 0.064889,
+          "estimated_f0_hz": 150.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "i ch i b a d e ch i N s e N n o s a k a n a o k a e m a sh I t a",
+          "full_kana_output": "いちばでちんせんのさかなをかえました",
+          "reference_context_kana": "あさいちばでしんせんなさかなをかいました",
+          "target_span_indices": [
+            2,
+            5
+          ],
+          "target_observed_kana": "いちば",
+          "target_error_rate": 0.0
+        },
+        "stt_transcript": "朝、市場で賃鮮な魚を買いました",
+        "cer": 0.125,
+        "error": null
+      }
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p07",
+      "raw_input": "大分県には温泉地が数多くあります。",
+      "effective_input": "大分県には温泉地が数多くあります。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "大分県には温泉地が数多くあります。"
+      },
+      "audio_path": "tmp/audio/aivis/p07.wav",
+      "duration_sec": 3.032834,
+      "generation_sec": 1.013441,
+      "stt_transcript": "こういった件には、温センチが数多くあります",
+      "cer": 0.647059,
+      "expected_reading": "おおいたけん",
+      "pronunciation_result": "要確認",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "大分県には温泉地が数多くあります。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "o N s e N ch i g a k a z u k a r i m a s U",
+        "full_kana_output": "おんせんちがかずをかわります",
+        "reference_context_kana": "おおいたけんにわおんせんちがかずおーくあります",
+        "target_span_indices": [
+          0,
+          6
+        ],
+        "target_observed_kana": "",
+        "target_error_rate": null
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 133748,
+        "duration_sec": 3.032834,
+        "rms_dbfs": -15.635,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.092105,
+        "zero_crossing_rate": 0.064615,
+        "estimated_f0_hz": 137.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": true
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p08",
+      "raw_input": "薬を飲んだら、大分よくなりました。",
+      "effective_input": "薬を飲んだら、だいぶよくなりました。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "薬を飲んだら、大分よくなりました。"
+      },
+      "audio_path": "tmp/audio/retry/aivis/p08.wav",
+      "duration_sec": 2.568435,
+      "generation_sec": 0.833974,
+      "stt_transcript": "薄りを飲んだらだいぶよくなりました",
+      "cer": 0.352941,
+      "expected_reading": "だいぶ",
+      "pronunciation_result": "不合格",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "薬を飲んだら、大分よくなりました。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "n d r o o t y o k u n a r i m a sh I t a",
+        "full_kana_output": "なんだらおーいたよくなりました",
+        "reference_context_kana": "くすりをのんだらだいぶよくなりました",
+        "target_span_indices": [
+          8,
+          11
+        ],
+        "target_observed_kana": "ーいた",
+        "target_error_rate": 0.6666666666666666,
+        "retry": {
+          "effective_input": "薬を飲んだら、だいぶよくなりました。",
+          "audio_path": "tmp/audio/retry/aivis/p08.wav",
+          "duration_sec": 2.568435,
+          "generation_sec": 0.833974,
+          "acoustic_features": {
+            "sample_rate_hz": 44100,
+            "channels": 1,
+            "bits_per_sample": 16,
+            "frame_count": 113268,
+            "duration_sec": 2.568435,
+            "rms_dbfs": -15.829,
+            "peak_dbfs": -0.0,
+            "silence_ratio": 0.100775,
+            "zero_crossing_rate": 0.067275,
+            "estimated_f0_hz": 50.0,
+            "anomaly_flags": []
+          },
+          "pronunciation_result": "不合格",
+          "pronunciation_evidence": {
+            "status": "acoustic_alignment",
+            "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+            "phoneme_ctc_output": "t a i b u y o k u n a r i m a sh I t a",
+            "full_kana_output": "んたいぶよくなりました",
+            "reference_context_kana": "くすりをのんだらだいぶよくなりました",
+            "target_span_indices": [
+              8,
+              11
+            ],
+            "target_observed_kana": "たいぶ",
+            "target_error_rate": 0.3333333333333333
+          },
+          "stt_transcript": "薄りを飲んだらだいぶよくなりました",
+          "cer": 0.352941,
+          "error": null
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 113268,
+        "duration_sec": 2.568435,
+        "rms_dbfs": -15.829,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.100775,
+        "zero_crossing_rate": 0.067275,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": true,
+      "error": null,
+      "human_review_required": false,
+      "first_attempt": {
+        "effective_input": "薬を飲んだら、大分よくなりました。",
+        "audio_path": "tmp/audio/aivis/p08.wav",
+        "duration_sec": 2.696145,
+        "generation_sec": 0.986657,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 118900,
+          "duration_sec": 2.696145,
+          "rms_dbfs": -13.55,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.111111,
+          "zero_crossing_rate": 0.05307,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "engine_reading_metadata": "薬を飲んだら、大分よくなりました。",
+          "stt": {
+            "system": "faster-whisper",
+            "language": "ja",
+            "language_probability": 1,
+            "segment_count": 1
+          },
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "n d r o o t y o k u n a r i m a sh I t a",
+          "full_kana_output": "なんだらおーいたよくなりました",
+          "reference_context_kana": "くすりをのんだらだいぶよくなりました",
+          "target_span_indices": [
+            8,
+            11
+          ],
+          "target_observed_kana": "ーいた",
+          "target_error_rate": 0.6666666666666666
+        },
+        "stt_transcript": "薄りを飲んだら置いたよくなりました",
+        "cer": 0.352941
+      },
+      "retry_attempt": {
+        "effective_input": "薬を飲んだら、だいぶよくなりました。",
+        "audio_path": "tmp/audio/retry/aivis/p08.wav",
+        "duration_sec": 2.568435,
+        "generation_sec": 0.833974,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 113268,
+          "duration_sec": 2.568435,
+          "rms_dbfs": -15.829,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.100775,
+          "zero_crossing_rate": 0.067275,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "t a i b u y o k u n a r i m a sh I t a",
+          "full_kana_output": "んたいぶよくなりました",
+          "reference_context_kana": "くすりをのんだらだいぶよくなりました",
+          "target_span_indices": [
+            8,
+            11
+          ],
+          "target_observed_kana": "たいぶ",
+          "target_error_rate": 0.3333333333333333
+        },
+        "stt_transcript": "薄りを飲んだらだいぶよくなりました",
+        "cer": 0.352941,
+        "error": null
+      }
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p09",
+      "raw_input": "東京都中央区の日本橋へ向かいます。",
+      "effective_input": "東京都中央区のにほんばしへ向かいます。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "東京都中央区の日本橋へ向かいます。"
+      },
+      "audio_path": "tmp/audio/retry/aivis/p09.wav",
+      "duration_sec": 2.963175,
+      "generation_sec": 0.956466,
+      "stt_transcript": "東京都中央区の日本橋へ向かいます",
+      "cer": 0.058824,
+      "expected_reading": "にほんばし",
+      "pronunciation_result": "不合格",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "東京都中央区の日本橋へ向かいます。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "n i N m a sh i e m u k a i m a s U",
+        "full_kana_output": "のにっんましむかえます",
+        "reference_context_kana": "とーきょーとちゅーおーくのにほんばしえむかいます",
+        "target_span_indices": [
+          13,
+          18
+        ],
+        "target_observed_kana": "にっんまし",
+        "target_error_rate": 0.4,
+        "retry": {
+          "effective_input": "東京都中央区のにほんばしへ向かいます。",
+          "audio_path": "tmp/audio/retry/aivis/p09.wav",
+          "duration_sec": 2.963175,
+          "generation_sec": 0.956466,
+          "acoustic_features": {
+            "sample_rate_hz": 44100,
+            "channels": 1,
+            "bits_per_sample": 16,
+            "frame_count": 130676,
+            "duration_sec": 2.963175,
+            "rms_dbfs": -15.277,
+            "peak_dbfs": -0.0,
+            "silence_ratio": 0.09396,
+            "zero_crossing_rate": 0.052037,
+            "estimated_f0_hz": 50.0,
+            "anomaly_flags": []
+          },
+          "pronunciation_result": "不合格",
+          "pronunciation_evidence": {
+            "status": "acoustic_alignment",
+            "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+            "phoneme_ctc_output": "n i o N b sh i e m u k a m a s U",
+            "full_kana_output": "にんばしむかえます",
+            "reference_context_kana": "とーきょーとちゅーおーくのにほんばしえむかいます",
+            "target_span_indices": [
+              13,
+              18
+            ],
+            "target_observed_kana": "にんばし",
+            "target_error_rate": 0.2
+          },
+          "stt_transcript": "東京都中央区の日本橋へ向かいます",
+          "cer": 0.058824,
+          "error": null
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 130676,
+        "duration_sec": 2.963175,
+        "rms_dbfs": -15.277,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.09396,
+        "zero_crossing_rate": 0.052037,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": true,
+      "error": null,
+      "human_review_required": false,
+      "first_attempt": {
+        "effective_input": "東京都中央区の日本橋へ向かいます。",
+        "audio_path": "tmp/audio/aivis/p09.wav",
+        "duration_sec": 2.893515,
+        "generation_sec": 0.969997,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 127604,
+          "duration_sec": 2.893515,
+          "rms_dbfs": -13.686,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.075862,
+          "zero_crossing_rate": 0.050469,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "engine_reading_metadata": "東京都中央区の日本橋へ向かいます。",
+          "stt": {
+            "system": "faster-whisper",
+            "language": "ja",
+            "language_probability": 1,
+            "segment_count": 1
+          },
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "n i N m a sh i e m u k a i m a s U",
+          "full_kana_output": "のにっんましむかえます",
+          "reference_context_kana": "とーきょーとちゅーおーくのにほんばしえむかいます",
+          "target_span_indices": [
+            13,
+            18
+          ],
+          "target_observed_kana": "にっんまし",
+          "target_error_rate": 0.4
+        },
+        "stt_transcript": "平均途中央区の日本橋へ向かいます",
+        "cer": 0.235294
+      },
+      "retry_attempt": {
+        "effective_input": "東京都中央区のにほんばしへ向かいます。",
+        "audio_path": "tmp/audio/retry/aivis/p09.wav",
+        "duration_sec": 2.963175,
+        "generation_sec": 0.956466,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 130676,
+          "duration_sec": 2.963175,
+          "rms_dbfs": -15.277,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.09396,
+          "zero_crossing_rate": 0.052037,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "n i o N b sh i e m u k a m a s U",
+          "full_kana_output": "にんばしむかえます",
+          "reference_context_kana": "とーきょーとちゅーおーくのにほんばしえむかいます",
+          "target_span_indices": [
+            13,
+            18
+          ],
+          "target_observed_kana": "にんばし",
+          "target_error_rate": 0.2
+        },
+        "stt_transcript": "東京都中央区の日本橋へ向かいます",
+        "cer": 0.058824,
+        "error": null
+      }
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p10",
+      "raw_input": "大阪市浪速区の日本橋を歩きました。",
+      "effective_input": "大阪市浪速区のにっぽんばしを歩きました。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "大阪市浪速区の日本橋を歩きました。"
+      },
+      "audio_path": "tmp/audio/retry/aivis/p10.wav",
+      "duration_sec": 3.114104,
+      "generation_sec": 0.965865,
+      "stt_transcript": "大阪市何枠の日本橋を歩きました",
+      "cer": 0.235294,
+      "expected_reading": "にっぽんばし",
+      "pronunciation_result": "合格",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "大阪市浪速区の日本橋を歩きました。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "i h N m a sh i r k i m a sh I t a",
+        "full_kana_output": "のにんましれきました",
+        "reference_context_kana": "おーさかしなにわくのにっぽんばしをあるきました",
+        "target_span_indices": [
+          10,
+          16
+        ],
+        "target_observed_kana": "にんまし",
+        "target_error_rate": 0.5,
+        "retry": {
+          "effective_input": "大阪市浪速区のにっぽんばしを歩きました。",
+          "audio_path": "tmp/audio/retry/aivis/p10.wav",
+          "duration_sec": 3.114104,
+          "generation_sec": 0.965865,
+          "acoustic_features": {
+            "sample_rate_hz": 44100,
+            "channels": 1,
+            "bits_per_sample": 16,
+            "frame_count": 137332,
+            "duration_sec": 3.114104,
+            "rms_dbfs": -14.891,
+            "peak_dbfs": -0.0,
+            "silence_ratio": 0.108974,
+            "zero_crossing_rate": 0.051394,
+            "estimated_f0_hz": 50.0,
+            "anomaly_flags": []
+          },
+          "pronunciation_result": "合格",
+          "pronunciation_evidence": {
+            "status": "acoustic_alignment",
+            "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+            "phoneme_ctc_output": "w k n n i cl p o N b a sh i a r e k i m a sh I t a",
+            "full_kana_output": "わくにっぽんばしれきました",
+            "reference_context_kana": "おーさかしなにわくのにっぽんばしをあるきました",
+            "target_span_indices": [
+              10,
+              16
+            ],
+            "target_observed_kana": "にっぽんばし",
+            "target_error_rate": 0.0
+          },
+          "stt_transcript": "大阪市何枠の日本橋を歩きました",
+          "cer": 0.235294,
+          "error": null
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 137332,
+        "duration_sec": 3.114104,
+        "rms_dbfs": -14.891,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.108974,
+        "zero_crossing_rate": 0.051394,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": true,
+      "error": null,
+      "human_review_required": false,
+      "first_attempt": {
+        "effective_input": "大阪市浪速区の日本橋を歩きました。",
+        "audio_path": "tmp/audio/aivis/p10.wav",
+        "duration_sec": 3.021224,
+        "generation_sec": 1.069237,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 133236,
+          "duration_sec": 3.021224,
+          "rms_dbfs": -14.562,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.105263,
+          "zero_crossing_rate": 0.058048,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "engine_reading_metadata": "大阪市浪速区の日本橋を歩きました。",
+          "stt": {
+            "system": "faster-whisper",
+            "language": "ja",
+            "language_probability": 1,
+            "segment_count": 1
+          },
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "i h N m a sh i r k i m a sh I t a",
+          "full_kana_output": "のにんましれきました",
+          "reference_context_kana": "おーさかしなにわくのにっぽんばしをあるきました",
+          "target_span_indices": [
+            10,
+            16
+          ],
+          "target_observed_kana": "にんまし",
+          "target_error_rate": 0.5
+        },
+        "stt_transcript": "大阪市何枠の日本橋を歩きました",
+        "cer": 0.235294
+      },
+      "retry_attempt": {
+        "effective_input": "大阪市浪速区のにっぽんばしを歩きました。",
+        "audio_path": "tmp/audio/retry/aivis/p10.wav",
+        "duration_sec": 3.114104,
+        "generation_sec": 0.965865,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 137332,
+          "duration_sec": 3.114104,
+          "rms_dbfs": -14.891,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.108974,
+          "zero_crossing_rate": 0.051394,
+          "estimated_f0_hz": 50.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "w k n n i cl p o N b a sh i a r e k i m a sh I t a",
+          "full_kana_output": "わくにっぽんばしれきました",
+          "reference_context_kana": "おーさかしなにわくのにっぽんばしをあるきました",
+          "target_span_indices": [
+            10,
+            16
+          ],
+          "target_observed_kana": "にっぽんばし",
+          "target_error_rate": 0.0
+        },
+        "stt_transcript": "大阪市何枠の日本橋を歩きました",
+        "cer": 0.235294,
+        "error": null
+      }
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p11",
+      "raw_input": "御器所駅で地下鉄を乗り換えます。",
+      "effective_input": "御器所駅で地下鉄を乗り換えます。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "御器所駅で地下鉄を乗り換えます。"
+      },
+      "audio_path": "tmp/audio/aivis/p11.wav",
+      "duration_sec": 2.521995,
+      "generation_sec": 0.883528,
+      "stt_transcript": "冒険空域で地下鉄を乗り換えます",
+      "cer": 0.3125,
+      "expected_reading": "ごきそ",
+      "pronunciation_result": "要確認",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "御器所駅で地下鉄を乗り換えます。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "ch k a t e ts u o n o r i k a e m a s U",
+        "full_kana_output": "でちかてつをのりかえます",
+        "reference_context_kana": "ごきそえきでちかてつをのりかえます",
+        "target_span_indices": [
+          0,
+          3
+        ],
+        "target_observed_kana": "",
+        "target_error_rate": null
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 111220,
+        "duration_sec": 2.521995,
+        "rms_dbfs": -17.89,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.110236,
+        "zero_crossing_rate": 0.085003,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": true
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p12",
+      "raw_input": "新瑞橋駅の改札前で待ち合わせましょう。",
+      "effective_input": "新瑞橋駅の改札前で待ち合わせましょう。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "新瑞橋駅の改札前で待ち合わせましょう。"
+      },
+      "audio_path": "tmp/audio/aivis/p12.wav",
+      "duration_sec": 3.195374,
+      "generation_sec": 1.059469,
+      "stt_transcript": "原田桃市駅の改札前で待ち合わせましょう",
+      "cer": 0.263158,
+      "expected_reading": "あらたまばし",
+      "pronunciation_result": "要確認",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "新瑞橋駅の改札前で待ち合わせましょう。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "k k a i s a ts u m e e m a ch i a w a s m",
+        "full_kana_output": "えかいつまえでまちあわもょー",
+        "reference_context_kana": "あらたまばしえきのかいさつまえでまちあわせましょー",
+        "target_span_indices": [
+          0,
+          6
+        ],
+        "target_observed_kana": "",
+        "target_error_rate": null
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 140916,
+        "duration_sec": 3.195374,
+        "rms_dbfs": -15.205,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.09375,
+        "zero_crossing_rate": 0.064592,
+        "estimated_f0_hz": 187.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": true
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "p13",
+      "raw_input": "栄生駅から名古屋駅までは近いです。",
+      "effective_input": "さこう駅から名古屋駅までは近いです。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "栄生駅から名古屋駅までは近いです。"
+      },
+      "audio_path": "tmp/audio/retry/aivis/p13.wav",
+      "duration_sec": 3.009615,
+      "generation_sec": 0.953102,
+      "stt_transcript": "サコウ域から名古屋駅までは近いです",
+      "cer": 0.294118,
+      "expected_reading": "さこう",
+      "pronunciation_result": "要確認",
+      "pronunciation_evidence": {
+        "status": "acoustic_alignment",
+        "engine_reading_metadata": "栄生駅から名古屋駅までは近いです。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        },
+        "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+        "phoneme_ctc_output": "k I k n o y k i m a d e w a j I k a i d e s U",
+        "full_kana_output": "さきらなごきまでわじかいです",
+        "reference_context_kana": "さこうえきからなごやえきまでわちかいです",
+        "target_span_indices": [
+          0,
+          3
+        ],
+        "target_observed_kana": "さ",
+        "target_error_rate": 0.6666666666666666,
+        "retry": {
+          "effective_input": "さこう駅から名古屋駅までは近いです。",
+          "audio_path": "tmp/audio/retry/aivis/p13.wav",
+          "duration_sec": 3.009615,
+          "generation_sec": 0.953102,
+          "acoustic_features": {
+            "sample_rate_hz": 44100,
+            "channels": 1,
+            "bits_per_sample": 16,
+            "frame_count": 132724,
+            "duration_sec": 3.009615,
+            "rms_dbfs": -17.112,
+            "peak_dbfs": -0.0,
+            "silence_ratio": 0.086093,
+            "zero_crossing_rate": 0.059703,
+            "estimated_f0_hz": 175.0,
+            "anomaly_flags": []
+          },
+          "pronunciation_result": "要確認",
+          "pronunciation_evidence": {
+            "status": "acoustic_alignment",
+            "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+            "phoneme_ctc_output": "s k k n a g o k i m a d e w a ch I k a e d e s U",
+            "full_kana_output": "きかなごきまでわちかいです",
+            "reference_context_kana": "さこうえきからなごやえきまでわちかいです",
+            "target_span_indices": [
+              0,
+              3
+            ],
+            "target_observed_kana": "",
+            "target_error_rate": null
+          },
+          "stt_transcript": "サコウ域から名古屋駅までは近いです",
+          "cer": 0.294118,
+          "error": null
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 132724,
+        "duration_sec": 3.009615,
+        "rms_dbfs": -17.112,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.086093,
+        "zero_crossing_rate": 0.059703,
+        "estimated_f0_hz": 175.0,
+        "anomaly_flags": []
+      },
+      "retry_used": true,
+      "error": null,
+      "human_review_required": true,
+      "first_attempt": {
+        "effective_input": "栄生駅から名古屋駅までは近いです。",
+        "audio_path": "tmp/audio/aivis/p13.wav",
+        "duration_sec": 2.986395,
+        "generation_sec": 1.003066,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 131700,
+          "duration_sec": 2.986395,
+          "rms_dbfs": -16.078,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.1,
+          "zero_crossing_rate": 0.058284,
+          "estimated_f0_hz": 187.5,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "不合格",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "engine_reading_metadata": "栄生駅から名古屋駅までは近いです。",
+          "stt": {
+            "system": "faster-whisper",
+            "language": "ja",
+            "language_probability": 1,
+            "segment_count": 1
+          },
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "k I k n o y k i m a d e w a j I k a i d e s U",
+          "full_kana_output": "さきらなごきまでわじかいです",
+          "reference_context_kana": "さこうえきからなごやえきまでわちかいです",
+          "target_span_indices": [
+            0,
+            3
+          ],
+          "target_observed_kana": "さ",
+          "target_error_rate": 0.6666666666666666
+        },
+        "stt_transcript": "サコウ域から名古屋駅までは近いです",
+        "cer": 0.294118
+      },
+      "retry_attempt": {
+        "effective_input": "さこう駅から名古屋駅までは近いです。",
+        "audio_path": "tmp/audio/retry/aivis/p13.wav",
+        "duration_sec": 3.009615,
+        "generation_sec": 0.953102,
+        "acoustic_features": {
+          "sample_rate_hz": 44100,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frame_count": 132724,
+          "duration_sec": 3.009615,
+          "rms_dbfs": -17.112,
+          "peak_dbfs": -0.0,
+          "silence_ratio": 0.086093,
+          "zero_crossing_rate": 0.059703,
+          "estimated_f0_hz": 175.0,
+          "anomaly_flags": []
+        },
+        "pronunciation_result": "要確認",
+        "pronunciation_evidence": {
+          "status": "acoustic_alignment",
+          "evaluator": "sakasegawa/japanese-wav2vec2-large-hiragana-ctc",
+          "phoneme_ctc_output": "s k k n a g o k i m a d e w a ch I k a e d e s U",
+          "full_kana_output": "きかなごきまでわちかいです",
+          "reference_context_kana": "さこうえきからなごやえきまでわちかいです",
+          "target_span_indices": [
+            0,
+            3
+          ],
+          "target_observed_kana": "",
+          "target_error_rate": null
+        },
+        "stt_transcript": "サコウ域から名古屋駅までは近いです",
+        "cer": 0.294118,
+        "error": null
+      }
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "m01",
+      "raw_input": "2026年9月6日の午後2時30分に開始します。",
+      "effective_input": "2026年9月6日の午後2時30分に開始します。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "2026年9月6日の午後2時30分に開始します。"
+      },
+      "audio_path": "tmp/audio/aivis/m01.wav",
+      "duration_sec": 4.321542,
+      "generation_sec": 1.371674,
+      "stt_transcript": "2026年9月6日の午後2時30分に開始します",
+      "cer": 0.041667,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "2026年9月6日の午後2時30分に開始します。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 190580,
+        "duration_sec": 4.321542,
+        "rms_dbfs": -14.645,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.069124,
+        "zero_crossing_rate": 0.072946,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "m02",
+      "raw_input": "成功率は98.5パーセントで、前回より3.2ポイント改善しました。",
+      "effective_input": "成功率は98.5パーセントで、前回より3.2ポイント改善しました。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "成功率は98.5パーセントで、前回より3.2ポイント改善しました。"
+      },
+      "audio_path": "tmp/audio/aivis/m02.wav",
+      "duration_sec": 6.132698,
+      "generation_sec": 1.665616,
+      "stt_transcript": "成功率は98.5%で、前回より3.2ポイント改善しました",
+      "cer": 0.181818,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "成功率は98.5パーセントで、前回より3.2ポイント改善しました。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 270452,
+        "duration_sec": 6.132698,
+        "rms_dbfs": -15.783,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.068404,
+        "zero_crossing_rate": 0.060211,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "m03",
+      "raw_input": "APIからJSONを受け取り、GPUでTTSモデルを実行します。",
+      "effective_input": "APIからJSONを受け取り、GPUでTTSモデルを実行します。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "APIからJSONを受け取り、GPUでTTSモデルを実行します。"
+      },
+      "audio_path": "tmp/audio/aivis/m03.wav",
+      "duration_sec": 5.35483,
+      "generation_sec": 1.512833,
+      "stt_transcript": "APIからJSONを受け取り、GPUでDTSモデルを実行します",
+      "cer": 0.0625,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "APIからJSONを受け取り、GPUでTTSモデルを実行します。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 236148,
+        "duration_sec": 5.35483,
+        "rms_dbfs": -15.526,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.08209,
+        "zero_crossing_rate": 0.055432,
+        "estimated_f0_hz": 175.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "m04",
+      "raw_input": "GitHubのREADMEとPython 3.12の環境を確認してください。",
+      "effective_input": "GitHubのREADMEとPython 3.12の環境を確認してください。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "GitHubのREADMEとPython 3.12の環境を確認してください。"
+      },
+      "audio_path": "tmp/audio/aivis/m04.wav",
+      "duration_sec": 5.0878,
+      "generation_sec": 1.473727,
+      "stt_transcript": "リッド・ハブのウィル・ミート・パイソン312の環境を確認してください",
+      "cer": 0.567568,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "GitHubのREADMEとPython 3.12の環境を確認してください。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 224372,
+        "duration_sec": 5.0878,
+        "rms_dbfs": -15.154,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.058824,
+        "zero_crossing_rate": 0.046494,
+        "estimated_f0_hz": 112.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "q01",
+      "raw_input": "結論は三つです。第一に、精度。第二に、自然さ。そして第三に、運用のしやすさです。",
+      "effective_input": "結論は三つです。第一に、精度。第二に、自然さ。そして第三に、運用のしやすさです。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "結論は三つです。第一に、精度。第二に、自然さ。そして第三に、運用のしやすさです。"
+      },
+      "audio_path": "tmp/audio/aivis/q01.wav",
+      "duration_sec": 7.839365,
+      "generation_sec": 1.991315,
+      "stt_transcript": "結論は3つです。第一に、精度、第二に、自然さ、そして第三に、無業のしやさです。",
+      "cer": 0.15,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "結論は三つです。第一に、精度。第二に、自然さ。そして第三に、運用のしやすさです。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 345716,
+        "duration_sec": 7.839365,
+        "rms_dbfs": -17.166,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.056122,
+        "zero_crossing_rate": 0.067969,
+        "estimated_f0_hz": 50.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "q02",
+      "raw_input": "本当に？……それなら、もう一度だけ試してみよう。",
+      "effective_input": "本当に？……それなら、もう一度だけ試してみよう。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "本当に？……それなら、もう一度だけ試してみよう。"
+      },
+      "audio_path": "tmp/audio/aivis/q02.wav",
+      "duration_sec": 4.124172,
+      "generation_sec": 1.2998,
+      "stt_transcript": "本当に、それならもう一度だけ試してみよう",
+      "cer": 0.321429,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "本当に？……それなら、もう一度だけ試してみよう。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 181876,
+        "duration_sec": 4.124172,
+        "rms_dbfs": -15.045,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.10628,
+        "zero_crossing_rate": 0.041127,
+        "estimated_f0_hz": 112.5,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "q03",
+      "raw_input": "注意してください――ここから先は、元に戻せません。",
+      "effective_input": "注意してください――ここから先は、元に戻せません。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "注意してください――ここから先は、元に戻せません。"
+      },
+      "audio_path": "tmp/audio/aivis/q03.wav",
+      "duration_sec": 3.996463,
+      "generation_sec": 1.270168,
+      "stt_transcript": "注意してください。ここから先は元に戻せません",
+      "cer": 0.16,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "注意してください――ここから先は、元に戻せません。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 1
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 176244,
+        "duration_sec": 3.996463,
+        "rms_dbfs": -17.325,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.07,
+        "zero_crossing_rate": 0.062017,
+        "estimated_f0_hz": 125.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    },
+    {
+      "engine_id": "aivis",
+      "case_id": "l01",
+      "raw_input": "音声合成システムを実運用へ導入する際は、モデルの品質だけでなく、入力処理、再現性、監視、障害対応までを一つの流れとして設計する必要があります。まず、原稿を保存する形式を決めます。原文、読み、話者、スタイル、生成時刻、モデルの識別子を記録すると、後から同じ音声を作り直しやすくなります。漢字の読みが文脈で変わる日本語では、TTSへ渡す前に辞書や形態素解析を使い、必要なら発話用のかな原稿を別に用意します。原文を変更せず、raw inputとeffective inputを分けて保存することが重要です。次に、音声ファイルの形式を統一します。サンプリング周波数、チャンネル数、ビット深度、無音の扱いを固定し、保存前に検査します。長い文章では途中切断、同じ句の反復、極端な無音、音量の崩れ、速度の急変が起きることがあるため、波形と区間ごとの特徴量を自動的に確認します。生成時間はリアルタイム性の指標ではなく、バッチ処理の容量計画に使います。たとえば一時間分の原稿を夜間に処理するなら、平均の実時間比と失敗率から必要な並列数を見積もれます。ただし、GPUメモリが足りない状態で並列化すると、かえって再試行が増えます。まず一つのジョブを安定させ、ピークVRAMとピークRAMを測ってから同時実行数を増やします。評価は、生成音声をローカルSTTへ戻すround-tripだけで完了させてはいけません。STTは文脈を補正して、誤った発音でも正しい漢字を出す可能性があります。そのため、ひらがなまたは音素を出力する認識器、音素アラインメント、エンジンが返す読み情報などを組み合わせ、根拠の種類を明記します。評価器同士が一致しない場合は、人間の確認が必要です。全件試聴は避け、機械判定が不安定な代表例だけをhuman reviewへ回します。表現力については、neutral、cheerful、sad、angry、calm、energetic、whisper_or_soft、slow_explanatory、fast_excitedという共通意図を各エンジンの話者、スタイル、速度、音量、抑揚、自然言語指示へ対応付けます。完全に同じ表現にはならないため、どのパラメータへ変換したかを保存します。自然さの推定器を使う場合も、推定MOSを人間のMOSと混同せず、モデル名とバージョンを記録します。最後に、ライセンスをコード、モデル、生成音声に分けて確認します。公開リポジトリにはモデル本体、巨大キャッシュ、全量音声を入れず、取得元、固定バージョン、ハッシュ、利用条件、必要なクレジットだけを残します。これらを守ることで、品質を比較できるだけでなく、後から結果を再現し、問題が起きたときに原因を追跡できるベンチマークになります。",
+      "effective_input": "音声合成システムを実運用へ導入する際は、モデルの品質だけでなく、入力処理、再現性、監視、障害対応までを一つの流れとして設計する必要があります。まず、原稿を保存する形式を決めます。原文、読み、話者、スタイル、生成時刻、モデルの識別子を記録すると、後から同じ音声を作り直しやすくなります。漢字の読みが文脈で変わる日本語では、TTSへ渡す前に辞書や形態素解析を使い、必要なら発話用のかな原稿を別に用意します。原文を変更せず、raw inputとeffective inputを分けて保存することが重要です。次に、音声ファイルの形式を統一します。サンプリング周波数、チャンネル数、ビット深度、無音の扱いを固定し、保存前に検査します。長い文章では途中切断、同じ句の反復、極端な無音、音量の崩れ、速度の急変が起きることがあるため、波形と区間ごとの特徴量を自動的に確認します。生成時間はリアルタイム性の指標ではなく、バッチ処理の容量計画に使います。たとえば一時間分の原稿を夜間に処理するなら、平均の実時間比と失敗率から必要な並列数を見積もれます。ただし、GPUメモリが足りない状態で並列化すると、かえって再試行が増えます。まず一つのジョブを安定させ、ピークVRAMとピークRAMを測ってから同時実行数を増やします。評価は、生成音声をローカルSTTへ戻すround-tripだけで完了させてはいけません。STTは文脈を補正して、誤った発音でも正しい漢字を出す可能性があります。そのため、ひらがなまたは音素を出力する認識器、音素アラインメント、エンジンが返す読み情報などを組み合わせ、根拠の種類を明記します。評価器同士が一致しない場合は、人間の確認が必要です。全件試聴は避け、機械判定が不安定な代表例だけをhuman reviewへ回します。表現力については、neutral、cheerful、sad、angry、calm、energetic、whisper_or_soft、slow_explanatory、fast_excitedという共通意図を各エンジンの話者、スタイル、速度、音量、抑揚、自然言語指示へ対応付けます。完全に同じ表現にはならないため、どのパラメータへ変換したかを保存します。自然さの推定器を使う場合も、推定MOSを人間のMOSと混同せず、モデル名とバージョンを記録します。最後に、ライセンスをコード、モデル、生成音声に分けて確認します。公開リポジトリにはモデル本体、巨大キャッシュ、全量音声を入れず、取得元、固定バージョン、ハッシュ、利用条件、必要なクレジットだけを残します。これらを守ることで、品質を比較できるだけでなく、後から結果を再現し、問題が起きたときに原因を追跡できるベンチマークになります。",
+      "requested_style": "neutral",
+      "mapped_style_or_parameters": {
+        "speaker_id": 606865152,
+        "parameters": "default",
+        "engine_reading_metadata": "音声合成システムを実運用へ導入する際は、モデルの品質だけでなく、入力処理、再現性、監視、障害対応までを一つの流れとして設計する必要があります。まず、原稿を保存する形式を決めます。原文、読み、話者、スタイル、生成時刻、モデルの識別子を記録すると、後から同じ音声を作り直しやすくなります。漢字の読みが文脈で変わる日本語では、TTSへ渡す前に辞書や形態素解析を使い、必要なら発話用のかな原稿を別に用意します。原文を変更せず、raw inputとeffective inputを分けて保存することが重要です。次に、音声ファイルの形式を統一します。サンプリング周波数、チャンネル数、ビット深度、無音の扱いを固定し、保存前に検査します。長い文章では途中切断、同じ句の反復、極端な無音、音量の崩れ、速度の急変が起きることがあるため、波形と区間ごとの特徴量を自動的に確認します。生成時間はリアルタイム性の指標ではなく、バッチ処理の容量計画に使います。たとえば一時間分の原稿を夜間に処理するなら、平均の実時間比と失敗率から必要な並列数を見積もれます。ただし、GPUメモリが足りない状態で並列化すると、かえって再試行が増えます。まず一つのジョブを安定させ、ピークVRAMとピークRAMを測ってから同時実行数を増やします。評価は、生成音声をローカルSTTへ戻すround-tripだけで完了させてはいけません。STTは文脈を補正して、誤った発音でも正しい漢字を出す可能性があります。そのため、ひらがなまたは音素を出力する認識器、音素アラインメント、エンジンが返す読み情報などを組み合わせ、根拠の種類を明記します。評価器同士が一致しない場合は、人間の確認が必要です。全件試聴は避け、機械判定が不安定な代表例だけをhuman reviewへ回します。表現力については、neutral、cheerful、sad、angry、calm、energetic、whisper_or_soft、slow_explanatory、fast_excitedという共通意図を各エンジンの話者、スタイル、速度、音量、抑揚、自然言語指示へ対応付けます。完全に同じ表現にはならないため、どのパラメータへ変換したかを保存します。自然さの推定器を使う場合も、推定MOSを人間のMOSと混同せず、モデル名とバージョンを記録します。最後に、ライセンスをコード、モデル、生成音声に分けて確認します。公開リポジトリにはモデル本体、巨大キャッシュ、全量音声を入れず、取得元、固定バージョン、ハッシュ、利用条件、必要なクレジットだけを残します。これらを守ることで、品質を比較できるだけでなく、後から結果を再現し、問題が起きたときに原因を追跡できるベンチマークになります。"
+      },
+      "audio_path": "tmp/audio/aivis/l01.wav",
+      "duration_sec": 186.900045,
+      "generation_sec": 123.192978,
+      "stt_transcript": "本性合成システムを自治運用へ導入する際は、モデルの品質だけでなく、入力処理、再電性、監視、障害対応までを一つの流れとして設計する必要があります。まず、現行を保存する形式を決めます。天文、読み、和射、スタイル、生成時刻、モデルの識別詞を記録すると、後から同じ音声を作り直しやすくなります。漢字の読みが文明で変わる日本語では、TTSへ渡す前に、辞書や携帯素解析を使い、必要なら発話用のかな電光を別に用意します。天文を変更せず、ローインプットとエフェクティブインプットを分けて保存することが重要です。次に、音声ファイルの形式を統一します。サンプリング周波数、チャンネル数、ビット進度、モーンの扱いを固定し、個存前に検査します。長い文章では、途中切断、同じ区の反復、極端なモーン、音量の崩れ、速度の急変が起きることがあるため、波形等、区間ごとの特徴量を自動的に確認します。停止りと期間は、リアルタイム性の指標ではなく、バッチ処理の容量計画に使います。例えば1時間分の現行を夜会に処理するなら平均の実時間費と失敗率から必要な並列数を見積もれますただしGPUメモリが足りない状態で並列化すると帰って再指向が増えますまず1つのジョブを安定させPEAK VLAMとPEAK LAMを図ってから同時実コースを増やします評価は生成音声をローカルSTTへ戻すラウンドトリップだけで完了させてはいけませんレスティティは文明を補正して、誤った発音でも正しい感じを出す可能性がありますそのため、ヒラガナマタは、音符を出力する、ミンシキキ、音符バラインメント、レンジンが返す、読み情報などを組み合わせ、根拠の種類を明記します評価機動士が立ちしない場合は、人間の確認が必要です前典市長は避け、機械判定が不安定な代表例立てを、Human Reviewへ回します表現力については、Neutral、Chiaful、Sat、Amry、Karm、Energetic、Whisperを襲うとSlow Explanatory、Fast Excitedという共通意と各エンジンの和者、スタイル、速度、音量、欲用、自然連合指示へ対応を付けます完全に同じ表現にはならないため、どのパラメータへ変換したかを保存します自然差の推定器を使う場合も、 推定MOSを人間のMOSと混動せず、モデル名頭、バージョンを記録します。最後に、ダイセンスをコード、モデル、 生成音声に分けて確認します。公開リポジトリには、モデル本体、 巨大キャッシュ、全量音声を入れず、取得元、固定バージョン、ハッシュ、 利用条件、必要なクレジットだけを残します。これらを守ることで、品質を比較できるだけでなく、バトから結果を再現し、問題が起きた時に原因を追跡できるベンチマークになります",
+      "cer": 0.169565,
+      "expected_reading": null,
+      "pronunciation_result": "対象外",
+      "pronunciation_evidence": {
+        "status": "pending_acoustic_evaluator",
+        "engine_reading_metadata": "音声合成システムを実運用へ導入する際は、モデルの品質だけでなく、入力処理、再現性、監視、障害対応までを一つの流れとして設計する必要があります。まず、原稿を保存する形式を決めます。原文、読み、話者、スタイル、生成時刻、モデルの識別子を記録すると、後から同じ音声を作り直しやすくなります。漢字の読みが文脈で変わる日本語では、TTSへ渡す前に辞書や形態素解析を使い、必要なら発話用のかな原稿を別に用意します。原文を変更せず、raw inputとeffective inputを分けて保存することが重要です。次に、音声ファイルの形式を統一します。サンプリング周波数、チャンネル数、ビット深度、無音の扱いを固定し、保存前に検査します。長い文章では途中切断、同じ句の反復、極端な無音、音量の崩れ、速度の急変が起きることがあるため、波形と区間ごとの特徴量を自動的に確認します。生成時間はリアルタイム性の指標ではなく、バッチ処理の容量計画に使います。たとえば一時間分の原稿を夜間に処理するなら、平均の実時間比と失敗率から必要な並列数を見積もれます。ただし、GPUメモリが足りない状態で並列化すると、かえって再試行が増えます。まず一つのジョブを安定させ、ピークVRAMとピークRAMを測ってから同時実行数を増やします。評価は、生成音声をローカルSTTへ戻すround-tripだけで完了させてはいけません。STTは文脈を補正して、誤った発音でも正しい漢字を出す可能性があります。そのため、ひらがなまたは音素を出力する認識器、音素アラインメント、エンジンが返す読み情報などを組み合わせ、根拠の種類を明記します。評価器同士が一致しない場合は、人間の確認が必要です。全件試聴は避け、機械判定が不安定な代表例だけをhuman reviewへ回します。表現力については、neutral、cheerful、sad、angry、calm、energetic、whisper_or_soft、slow_explanatory、fast_excitedという共通意図を各エンジンの話者、スタイル、速度、音量、抑揚、自然言語指示へ対応付けます。完全に同じ表現にはならないため、どのパラメータへ変換したかを保存します。自然さの推定器を使う場合も、推定MOSを人間のMOSと混同せず、モデル名とバージョンを記録します。最後に、ライセンスをコード、モデル、生成音声に分けて確認します。公開リポジトリにはモデル本体、巨大キャッシュ、全量音声を入れず、取得元、固定バージョン、ハッシュ、利用条件、必要なクレジットだけを残します。これらを守ることで、品質を比較できるだけでなく、後から結果を再現し、問題が起きたときに原因を追跡できるベンチマークになります。",
+        "stt": {
+          "system": "faster-whisper",
+          "language": "ja",
+          "language_probability": 1,
+          "segment_count": 39
+        }
+      },
+      "mos_estimate": null,
+      "acoustic_features": {
+        "sample_rate_hz": 44100,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frame_count": 8242292,
+        "duration_sec": 186.900045,
+        "rms_dbfs": -18.497,
+        "peak_dbfs": -0.0,
+        "silence_ratio": 0.027391,
+        "zero_crossing_rate": 0.050552,
+        "estimated_f0_hz": 150.0,
+        "anomaly_flags": []
+      },
+      "retry_used": false,
+      "error": null,
+      "human_review_required": false
+    }
+  ]
+}

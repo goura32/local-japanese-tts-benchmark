@@ -1,0 +1,32 @@
+{
+  "engine": {
+    "engine_id": "indextts_25",
+    "engine_name": "IndexTTS-2.5",
+    "version": "ee40fa7d6c6b8a2c7f06105f9f1e65775b74868c",
+    "source_url": "https://github.com/index-tts/index-tts",
+    "license": {
+      "code": "repository license file is a bilibili Model Use License Agreement",
+      "model": "bilibili Model Use License Agreement; re-check selected checkpoint",
+      "audio": "not redistributed"
+    },
+    "local_inference": null,
+    "japanese_support": "公式",
+    "install_status": "対象外",
+    "install_notes": "Candidate for expressive and controllable speech; installation/model acquisition was not completed in this snapshot.",
+    "model_size_gb": null,
+    "peak_vram_gb": null,
+    "peak_ram_gb": null,
+    "generation_rtf": null,
+    "automation_score": null,
+    "pronunciation_control_score": null,
+    "expression_score": null,
+    "naturalness_score": null,
+    "content_accuracy_score": null,
+    "overall_notes": "Candidate for expressive and controllable speech; installation/model acquisition was not completed in this snapshot. No local adapter/checkpoint was run; scores remain null rather than zero.",
+    "human_review_required_count": 0,
+    "case_count": 0,
+    "successful_case_count": 0,
+    "failed_case_count": 0
+  },
+  "case_results": []
+}
