@@ -16,6 +16,14 @@ explicit `対象外` result after three documented installation failures; it is
 not zero-scored. See [`docs/PHASE2_RESULTS.md`](docs/PHASE2_RESULTS.md) and
 [`results/phase2/summary.json`](results/phase2/summary.json).
 
+Phase 2.1 is complete. A private 15-sample blind review was aggregated after
+blind-map disclosure; only `naturalness` was entered. `instruction_match`,
+`pronunciation_quality`, `would_use`, `reading_issue`, and `note` remain
+`null` and are not treated as missing-input errors. The private map, review
+audio, and score sheet are not in this repository. See
+[`docs/PHASE2_1_HUMAN_REVIEW.md`](docs/PHASE2_1_HUMAN_REVIEW.md) and
+[`results/phase2_1/`](results/phase2_1/).
+
 ## Reproduce
 
 ```bash
@@ -42,6 +50,11 @@ For Phase 2, use [`docs/PHASE2_REPRODUCE.md`](docs/PHASE2_REPRODUCE.md):
 `evaluate_phase2.py` writes the additive `results/phase2/` delta without
 overwriting the Phase 1 result.
 
+For Phase 2.1 review aggregation, use
+[`scripts/evaluate/aggregate_phase21.py`](scripts/evaluate/aggregate_phase21.py)
+with the private score workbook and blind map. It writes only the anonymized
+results under `results/phase2_1/`.
+
 ## Repository layout
 
 - `config/`: engine metadata and run parameters
@@ -57,10 +70,14 @@ No model weights, credentials, full audio corpus, or cache are committed.
 
 ## Scope and limitations
 
-The benchmark is not a human MOS study. Phase 2 records `mos_estimate: null`
-when a validated MOS/style evaluator is not available; it never substitutes an
-invented naturalness number. Ambiguous pronunciation is marked `要確認` when
-recognizers disagree or no acoustic phoneme/kana evidence is available.
+Phase 2.1 contains a bounded human naturalness review, not a complete human
+MOS study. The public result reports the entered naturalness values separately
+from Phase 2 machine metrics. The other review dimensions intentionally remain
+`null`; no human pronunciation-quality, instruction-match, or would-use result
+is claimed. Phase 2 still records `mos_estimate: null` when a validated MOS/style
+evaluator is not available and never substitutes an invented human score.
+Ambiguous pronunciation is marked `要確認` when recognizers disagree or no
+acoustic phoneme/kana evidence is available.
 Candidate implementation, model, speaker, reference-audio, and output terms
 must be checked again before production use; the reports preserve what was
 verified at the run date.

@@ -19,3 +19,8 @@ corpus. Third-party assets remain in their upstream distribution channels.
 For COEIROINK, do not commit generated audio or model files without checking
 the current voice/model-specific conditions. The upstream terms require the
 applicable credit and prohibit treating model redistribution as automatic.
+
+Phase 2.1 review audio was retained only in the owner-private review area after
+per-engine code, model, speaker/character, reference-audio, and output-term
+checks. No Phase 2.1 WAV, model weight, reference recording, private blind map,
+or reviewer workbook is redistributed by this repository.

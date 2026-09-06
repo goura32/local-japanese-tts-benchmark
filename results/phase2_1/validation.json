@@ -1,0 +1,17 @@
+{
+  "status": "valid",
+  "sample_count": 15,
+  "engine_count": 4,
+  "engine_case_count": 15,
+  "reviewed_dimensions": [
+    "naturalness"
+  ],
+  "not_evaluated_dimensions": [
+    "instruction_match",
+    "pronunciation_quality",
+    "would_use",
+    "reading_issue",
+    "note"
+  ],
+  "single_score": false
+}

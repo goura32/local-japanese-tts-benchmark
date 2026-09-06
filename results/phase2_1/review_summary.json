@@ -1,0 +1,259 @@
+{
+  "sample_count": 15,
+  "reviewed_dimensions": [
+    "naturalness"
+  ],
+  "not_evaluated_dimensions": [
+    "instruction_match",
+    "pronunciation_quality",
+    "would_use",
+    "reading_issue",
+    "note"
+  ],
+  "engine_aggregates": [
+    {
+      "engine_id": "irodori_tts",
+      "naturalness_mean": 3.25,
+      "naturalness_n": 4,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "qwen3_tts",
+      "naturalness_mean": 3.25,
+      "naturalness_n": 4,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "style_bert_vits2",
+      "naturalness_mean": 2.5,
+      "naturalness_n": 4,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "voicevox",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 3,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    }
+  ],
+  "engine_case_aggregates": [
+    {
+      "engine_id": "irodori_tts",
+      "case_id": "p05",
+      "category": "pronunciation",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "irodori_tts",
+      "case_id": "x01",
+      "category": "expression",
+      "naturalness_mean": 2.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "irodori_tts",
+      "case_id": "x02",
+      "category": "expression",
+      "naturalness_mean": 4.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "irodori_tts",
+      "case_id": "x03",
+      "category": "expression",
+      "naturalness_mean": 4.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "qwen3_tts",
+      "case_id": "p03",
+      "category": "pronunciation",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "qwen3_tts",
+      "case_id": "x01",
+      "category": "expression",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "qwen3_tts",
+      "case_id": "x02",
+      "category": "expression",
+      "naturalness_mean": 4.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "qwen3_tts",
+      "case_id": "x03",
+      "category": "expression",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "style_bert_vits2",
+      "case_id": "p13",
+      "category": "pronunciation",
+      "naturalness_mean": 2.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "style_bert_vits2",
+      "case_id": "x01",
+      "category": "expression",
+      "naturalness_mean": 2.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "style_bert_vits2",
+      "case_id": "x02",
+      "category": "expression",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "style_bert_vits2",
+      "case_id": "x03",
+      "category": "expression",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "voicevox",
+      "case_id": "x01",
+      "category": "expression",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "voicevox",
+      "case_id": "x02",
+      "category": "expression",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    },
+    {
+      "engine_id": "voicevox",
+      "case_id": "x03",
+      "category": "expression",
+      "naturalness_mean": 3.0,
+      "naturalness_n": 1,
+      "instruction_match_mean": null,
+      "pronunciation_quality_mean": null,
+      "would_use_mean": null,
+      "reading_issue_count": null,
+      "note": null
+    }
+  ],
+  "schema_version": "phase2.1-human-review-summary-1",
+  "phase": "phase2.1",
+  "status": "complete",
+  "blind_map_disclosed_before_aggregation": true,
+  "review_scope": {
+    "sample_count": 15,
+    "engine_count": 4,
+    "category_counts": {
+      "expression": 12,
+      "pronunciation": 3
+    }
+  },
+  "input_artifact": {
+    "kind": "private_review_scores_xlsx",
+    "sha256": "1c049979092bf0d674dacc57e892b2dd3c150d46db837b524ffd030eb130e836",
+    "path_published": false
+  },
+  "source_phase2": {
+    "commit": "3874e2faace3995f69feeb0c0e4104746827cd7e",
+    "tag": "v0.2.0"
+  },
+  "private_identity_mapping_published": false
+}

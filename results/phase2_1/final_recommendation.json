@@ -1,0 +1,210 @@
+{
+  "recommendations": {
+    "human_naturalness": {
+      "leader_engine_ids": [
+        "irodori_tts",
+        "qwen3_tts"
+      ],
+      "basis": "naturalness_mean only; other human dimensions are null"
+    },
+    "best_single_engine": {
+      "default_candidate": "irodori_tts",
+      "naturalness_leader_engine_ids": [
+        "irodori_tts",
+        "qwen3_tts"
+      ],
+      "selection_policy": "naturalness leaders, then lowest measured RTF; no composite score",
+      "status": "provisional"
+    },
+    "expression_naturalness": {
+      "leader_engine_ids": [
+        "irodori_tts",
+        "qwen3_tts"
+      ],
+      "engine_means": {
+        "irodori_tts": 3.333,
+        "qwen3_tts": 3.333,
+        "style_bert_vits2": 2.667,
+        "voicevox": 3.0
+      },
+      "basis": "naturalness_mean for expression samples only"
+    },
+    "reading_reliability": {
+      "machine_content_cer_candidate_engine_ids": [
+        "voicevox"
+      ],
+      "human_pronunciation_quality_mean": null,
+      "status": "machine_candidate_only",
+      "required_gate": "expected_reading or phoneme validation before production use"
+    },
+    "same_speaker_style": {
+      "candidate_engine_ids": [
+        "style_bert_vits2"
+      ],
+      "basis": "Phase 2 capability metadata; instruction_match was not evaluated by humans"
+    },
+    "automation": {
+      "lowest_phase2_rtf_engine_ids": [
+        "style_bert_vits2"
+      ],
+      "basis": "Phase 2 generation RTF only; not a human score"
+    },
+    "pipeline": "原文 → 読み前処理 → TTS → 自動検証"
+  },
+  "comparison": [
+    {
+      "engine_id": "voicevox",
+      "measurement_status": "実測完了",
+      "machine_metrics": {
+        "content_cer_mean": 0.126782,
+        "generation_rtf_mean": 0.173855,
+        "same_speaker_multi_style": false,
+        "raw_pronunciation_counts": {
+          "不合格": 11,
+          "合格": 1,
+          "要確認": 1
+        }
+      },
+      "human_naturalness": {
+        "naturalness_mean": 3.0,
+        "naturalness_n": 3
+      },
+      "human_other_dimensions": {
+        "instruction_match_mean": null,
+        "pronunciation_quality_mean": null,
+        "would_use_mean": null,
+        "reading_issue_count": null,
+        "note": null
+      }
+    },
+    {
+      "engine_id": "qwen3_tts",
+      "measurement_status": "実測完了",
+      "machine_metrics": {
+        "content_cer_mean": 0.134206,
+        "generation_rtf_mean": 0.589565,
+        "same_speaker_multi_style": false,
+        "raw_pronunciation_counts": {
+          "不合格": 10,
+          "要確認": 3
+        }
+      },
+      "human_naturalness": {
+        "naturalness_mean": 3.25,
+        "naturalness_n": 4
+      },
+      "human_other_dimensions": {
+        "instruction_match_mean": null,
+        "pronunciation_quality_mean": null,
+        "would_use_mean": null,
+        "reading_issue_count": null,
+        "note": null
+      }
+    },
+    {
+      "engine_id": "irodori_tts",
+      "measurement_status": "実測完了",
+      "machine_metrics": {
+        "content_cer_mean": 0.165371,
+        "generation_rtf_mean": 0.104949,
+        "same_speaker_multi_style": false,
+        "raw_pronunciation_counts": {
+          "不合格": 8,
+          "要確認": 3,
+          "合格": 2
+        }
+      },
+      "human_naturalness": {
+        "naturalness_mean": 3.25,
+        "naturalness_n": 4
+      },
+      "human_other_dimensions": {
+        "instruction_match_mean": null,
+        "pronunciation_quality_mean": null,
+        "would_use_mean": null,
+        "reading_issue_count": null,
+        "note": null
+      }
+    },
+    {
+      "engine_id": "style_bert_vits2",
+      "measurement_status": "実測完了",
+      "machine_metrics": {
+        "content_cer_mean": 0.151042,
+        "generation_rtf_mean": 0.038528,
+        "same_speaker_multi_style": true,
+        "raw_pronunciation_counts": {
+          "要確認": 6,
+          "不合格": 7
+        }
+      },
+      "human_naturalness": {
+        "naturalness_mean": 2.5,
+        "naturalness_n": 4
+      },
+      "human_other_dimensions": {
+        "instruction_match_mean": null,
+        "pronunciation_quality_mean": null,
+        "would_use_mean": null,
+        "reading_issue_count": null,
+        "note": null
+      }
+    },
+    {
+      "engine_id": "indextts_25",
+      "measurement_status": "対象外",
+      "machine_metrics": {
+        "content_cer_mean": null,
+        "generation_rtf_mean": null,
+        "same_speaker_multi_style": null,
+        "raw_pronunciation_counts": {
+          "対象外": 13
+        }
+      },
+      "human_naturalness": {
+        "naturalness_mean": null,
+        "naturalness_n": 0
+      },
+      "human_other_dimensions": {
+        "instruction_match_mean": null,
+        "pronunciation_quality_mean": null,
+        "would_use_mean": null,
+        "reading_issue_count": null,
+        "note": null
+      }
+    }
+  ],
+  "machine_human_comparison": {
+    "single_score": false,
+    "human_dimension": "naturalness",
+    "machine_dimensions": [
+      "content_cer_mean",
+      "generation_rtf_mean",
+      "raw_pronunciation_counts"
+    ],
+    "formal_reversal_concluded": false,
+    "reason": "human naturalness and Phase 2 machine metrics are different dimensions and were not merged"
+  },
+  "schema_version": "phase2.1-final-recommendation-1",
+  "phase": "phase2.1",
+  "status": "complete",
+  "source_phase2": {
+    "commit": "3874e2faace3995f69feeb0c0e4104746827cd7e",
+    "tag": "v0.2.0"
+  },
+  "human_review": {
+    "reviewed_dimensions": [
+      "naturalness"
+    ],
+    "not_evaluated_dimensions": [
+      "instruction_match",
+      "pronunciation_quality",
+      "would_use",
+      "reading_issue",
+      "note"
+    ],
+    "aggregation": "engine/case aggregation after applying the private blind map",
+    "sample_count": 15
+  },
+  "private_identity_mapping_published": false
+}

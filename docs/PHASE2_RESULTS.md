@@ -42,3 +42,13 @@ The full 43-case raw means are retained in each engine object (`content_cer_mean
 ## Reproduction evidence
 
 The run was generated with 69 requests per candidate. Adapter logs and temporary WAVs were kept outside Git and removed after verification. The public result keeps request text, effective input, model/source revision, evidence fields, and sanitized relative metadata, but no model weights, reference audio, or full generated-audio corpus.
+
+## Phase 2.1 human-review follow-up
+
+The Phase 2.1 blind review is now complete for `naturalness` only. Its
+engine/case aggregates and updated, metric-separated recommendations are in
+[`PHASE2_1_HUMAN_REVIEW.md`](PHASE2_1_HUMAN_REVIEW.md) and
+[`results/phase2_1/`](../results/phase2_1/). The Phase 2 machine tables above
+remain unchanged; `pronunciation_quality`, `instruction_match`, `would_use`,
+`reading_issue`, and `note` were intentionally not evaluated and remain
+`null` in the Phase 2.1 result.
